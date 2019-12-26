@@ -153,96 +153,96 @@ return [
         ],
 
         'forgot-password' => [
-            'title' => 'Recover Password',
-            'email' => 'Email',
-            'submit' => 'Send Password Reset Email',
-            'page_title' => 'Customer - Forgot Password Form'
+            'title' => 'パスワードが忘れ',
+            'email' => 'Eメール',
+            'submit' => 'パスワード再設定メール送信',
+            'page_title' => '顧客 - パスワードが忘れ'
         ],
 
         'reset-password' => [
-            'title' => 'Reset Password',
-            'email' => 'Registered Email',
-            'password' => 'Password',
-            'confirm-password' => 'Confirm Password',
-            'back-link-title' => 'Back to Sign In',
-            'submit-btn-title' => 'Reset Password'
+            'title' => 'パスワード再設定',
+            'email' => 'Eメール',
+            'password' => 'パスワード',
+            'confirm-password' => 'パスワード（確認）',
+            'back-link-title' => 'ログインへ',
+            'submit-btn-title' => 'パスワード再設定'
         ],
 
         'account' => [
-            'dashboard' => 'Customer - Edit Profile',
-            'menu' => 'Menu',
+            'dashboard' => '顧客 - プロファイル編集',
+            'menu' => 'メニュー',
 
             'profile' => [
                 'index' => [
-                    'page-title' => 'Customer - Profile',
-                    'title' => 'Profile',
-                    'edit' => 'Edit',
+                    'page-title' => '顧客 - プロファイル',
+                    'title' => 'プロファイル',
+                    'edit' => '編集',
                 ],
 
-                'edit-success' => 'Profile updated successfully.',
-                'edit-fail' => 'Error! Profile cannot be updated, please try again later.',
-                'unmatch' => 'The old password does not match.',
+                'edit-success' => 'プロファイル更新成功.',
+                'edit-fail' => 'プロファイル更新失敗, 後ほど試してください.',
+                'unmatch' => '元パスワードと一致しません.',
 
-                'fname' => 'First Name',
-                'lname' => 'Last Name',
-                'gender' => 'Gender',
-                'dob' => 'Date Of Birth',
-                'phone' => 'Phone',
-                'email' => 'Email',
-                'opassword' => 'Old Password',
-                'password' => 'Password',
-                'cpassword' => 'Confirm Password',
-                'submit' => 'Update Profile',
+                'fname' => '姓',
+                'lname' => '名',
+                'gender' => '性別',
+                'dob' => '生年月日',
+                'phone' => '電話',
+                'email' => 'Eメール',
+                'opassword' => '元パスワード',
+                'password' => 'パスワード',
+                'cpassword' => 'パスワード（確認）',
+                'submit' => 'プロファイル更新',
 
                 'edit-profile' => [
-                    'title' => 'Edit Profile',
-                    'page-title' => 'Customer - Edit Profile Form'
+                    'title' => 'プロファイル編集',
+                    'page-title' => '顧客 - プロファイル更新'
                 ]
             ],
 
             'address' => [
                 'index' => [
-                    'page-title' => 'Customer - Address',
-                    'title' => 'Address',
-                    'add' => 'Add Address',
-                    'edit' => 'Edit',
-                    'empty' => 'You do not have any saved addresses here, please try to create it by clicking the link below',
-                    'create' => 'Create Address',
-                    'delete' => 'Delete',
-                    'make-default' => 'Make Default',
-                    'default' => 'Default',
-                    'contact' => 'Contact',
-                    'confirm-delete' =>  'Do you really want to delete this address?',
-                    'default-delete' => 'Default address cannot be changed.',
-                    'enter-password' => 'Enter Your Password.',
+                    'page-title' => '顧客 - アドレス',
+                    'title' => 'アドレス',
+                    'add' => 'アドレス追加',
+                    'edit' => '編集',
+                    'empty' => 'アドレスがありません, アドレスを追加しましょう。',
+                    'create' => 'アドレス作成',
+                    'delete' => '削除',
+                    'make-default' => '初期に設定',
+                    'default' => '初期',
+                    'contact' => '宛先',
+                    'confirm-delete' =>  'すべてアドレス削除してよろしいでしょうか。?',
+                    'default-delete' => '初期アドレス変更ができません.',
+                    'enter-password' => 'パスワードを入力してください.',
                 ],
 
                 'create' => [
-                    'page-title' => 'Customer - Add Address Form',
-                    'title' => 'Add Address',
-                    'street-address' => 'Street Address',
-                    'country' => 'Country',
-                    'state' => 'State',
-                    'select-state' => 'Select a region, state or province',
-                    'city' => 'City',
-                    'postcode' => 'Postal Code',
-                    'phone' => 'Phone',
-                    'submit' => 'Save Address',
-                    'success' => 'Address have been successfully added.',
-                    'error' => 'Address cannot be added.'
+                    'page-title' => '顧客 - アドレス',
+                    'title' => 'アドレス追加',
+                    'street-address' => '市区町村',
+                    'country' => '国',
+                    'state' => '都道府県',
+                    'select-state' => '都道府県を選択してください',
+                    'city' => '城市',
+                    'postcode' => '郵便番号',
+                    'phone' => '電話',
+                    'submit' => 'アドレス保存',
+                    'success' => 'アドレス保存成功.',
+                    'error' => 'アドレス保存失敗.'
                 ],
 
                 'edit' => [
-                    'page-title' => 'Customer - Edit Address',
-                    'title' => 'Edit Address',
-                    'street-address' => 'Street Address',
-                    'submit' => 'Save Address',
-                    'success' => 'Address updated successfully.',
+                    'page-title' => '顧客 - アドレス編集',
+                    'title' => 'アドレス編集',
+                    'street-address' => '市区町村',
+                    'submit' => 'アドレス保存',
+                    'success' => 'アドレス更新成功.',
                 ],
                 'delete' => [
-                    'success' => 'Address successfully deleted',
-                    'failure' => 'Address cannot be deleted',
-                    'wrong-password' => 'Wrong Password !'
+                    'success' => 'アドレス削除成功',
+                    'failure' => 'アドレス削除失敗',
+                    'wrong-password' => 'パスワードが不正 !'
                 ]
             ],
 
@@ -635,9 +635,9 @@ return [
             ],
 
             'subscription' => [
-                'subject' => 'Subscription Email',
-                'greeting' => ' Welcome to ' . config('app.name') . ' - Email Subscription',
-                'unsubscribe' => 'Unsubscribe',
+                'subject' => 'サブスクリプトメール',
+                'greeting' => ' よこそ ' . config('app.name') . ' - Eメールサブスクリプト',
+                'unsubscribe' => 'サブスクリプト取消',
                 'summary' => 'Thanks for putting me into your inbox. It’s been a while since you’ve read ' . config('app.name') . ' email, and we don’t want to overwhelm your inbox. If you still do not want to receive
                 the latest email marketing news then for sure click the button below.'
             ]
@@ -649,9 +649,9 @@ return [
     ],
 
     'response' => [
-        'create-success' => ':name created successfully.',
-        'update-success' => ':name updated successfully.',
-        'delete-success' => ':name deleted successfully.',
-        'submit-success' => ':name submitted successfully.'
+        'create-success' => ':name 作成成功.',
+        'update-success' => ':name 更新成功.',
+        'delete-success' => ':name 削除成功.',
+        'submit-success' => ':name サブミット成功.'
     ],
 ];
