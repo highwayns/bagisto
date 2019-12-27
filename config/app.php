@@ -230,6 +230,8 @@ return [
         Webkul\Theme\Providers\ThemeServiceProvider::class,
         Webkul\User\Providers\UserServiceProvider::class,
         Webkul\Admin\Providers\AdminServiceProvider::class,
+        Webkul\VendorAdmin\Providers\VendorAdminServiceProvider::class,
+        Webkul\AgentAdmin\Providers\AgentAdminServiceProvider::class,
         Webkul\Ui\Providers\UiServiceProvider::class,
         Webkul\Category\Providers\CategoryServiceProvider::class,
         Webkul\Attribute\Providers\AttributeServiceProvider::class,

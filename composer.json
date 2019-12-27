@@ -77,6 +77,8 @@
                 "App\\": "app/",
                 "Webkul\\User\\": "packages/Webkul/User/src",
                 "Webkul\\Admin\\": "packages/Webkul/Admin/src",
+                "Webkul\\VendorAdmin\\": "packages/Webkul/VendorAdmin/src",
+                "Webkul\\AgentAdmin\\": "packages/Webkul/AgentAdmin/src",
                 "Webkul\\Ui\\": "packages/Webkul/Ui/src",
                 "Webkul\\Category\\": "packages/Webkul/Category/src",
                 "Webkul\\Checkout\\": "packages/Webkul/Checkout/src",
