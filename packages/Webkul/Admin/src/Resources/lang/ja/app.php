@@ -50,7 +50,7 @@ return [
         'orders' => '注文一覧',
         'shipments' => '運輸一覧',
         'invoices' => '請求書一覧',
-        'refunds' => '払戻一覧',
+        'refunds' => '返金一覧',
         'catalog' => 'カタログ',
         'products' => '商品一覧',
         'categories' => 'カテゴリ一覧',
@@ -202,8 +202,8 @@ return [
         'usage-throttle' => '使用回数',
         'for-guest' => 'ゲスト用',
         'order_number' => '注文番号',
-        'refund-date' => '払戻日付',
-        'refunded' => '払戻済み'
+        'refund-date' => '返金日付',
+        'refunded' => '返金済み'
     ],
 
     'account' => [
@@ -326,7 +326,7 @@ return [
             'item-invoice' => '請求済み (:qty_invoiced)',
             'item-shipped' => '運輸済み (:qty_shipped)',
             'item-canceled' => '取消済み (:qty_canceled)',
-            'item-refunded' => '払戻済み (:qty_refunded)',
+            'item-refunded' => '返金済み (:qty_refunded)',
             'price' => '単価',
             'total' => '総額',
             'subtotal' => '小計',
@@ -338,11 +338,11 @@ return [
             'discount-amount' => '割引額',
             'grand-total' => '総額',
             'total-paid' => '総支払額',
-            'total-refunded' => '総払戻額',
+            'total-refunded' => '総返金額',
             'total-due' => '総費用額',
             'cancel-confirm-msg' => '注文を取消、よろしいでしょうか ?',
-            'refund-btn-title' => '払戻',
-            'refunds' => '払戻一覧'
+            'refund-btn-title' => '返金',
+            'refunds' => '返金一覧'
         ],
 
         'invoices' => [
@@ -396,26 +396,26 @@ return [
         ],
 
         'refunds' => [
-            'title' => '払戻',
+            'title' => '返金',
             'id' => 'Id',
-            'add-title' => '払戻作成',
-            'save-btn-title' => '払戻',
+            'add-title' => '返金作成',
+            'save-btn-title' => '返金',
             'order-id' => '注文番号',
             'qty-ordered' => '注文数量',
-            'qty-to-refund' => '払戻数量',
-            'refund-shipping' => '払戻運輸',
-            'adjustment-refund' => '払戻調整',
+            'qty-to-refund' => '返金数量',
+            'refund-shipping' => '返金運輸',
+            'adjustment-refund' => '返金調整',
             'adjustment-fee' => '調整費用',
             'update-qty' => '更新数量',
-            'invalid-qty' => '払戻数量無効です.',
-            'refund-limit-error' => '最大払戻金額 :amount.',
-            'refunded' => '払戻済み',
-            'date' => '払戻日付',
+            'invalid-qty' => '返金数量無効です.',
+            'refund-limit-error' => '最大返金金額 :amount.',
+            'refunded' => '返金済み',
+            'date' => '返金日付',
             'customer-name' => '顧客名前',
             'status' => 'ステータス',
             'action' => '操作',
-            'view-title' => '払戻 #:refund_id',
-            'invalid-refund-amount-error' => '払戻金額0不可.'
+            'view-title' => '返金 #:refund_id',
+            'invalid-refund-amount-error' => '返金金額0不可.'
 
         ]
     ],
