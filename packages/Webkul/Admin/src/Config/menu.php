@@ -217,5 +217,11 @@ return [
         'route' => 'admin.cms.index',
         'sort' => 1,
         'icon-class' => ''
+    ], [
+        'key' => 'settings.vendor_sources',
+        'name' => 'admin::app.layouts.vendor-sources',
+        'route' => 'admin.vendor_sources.index',
+        'sort' => 9,
+        'icon-class' => ''
     ]
 ];

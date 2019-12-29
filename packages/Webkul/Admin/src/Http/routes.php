@@ -535,6 +535,29 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::post('/inventory_sources/delete/{id}', 'Webkul\Inventory\Http\Controllers\InventorySourceController@destroy')->name('admin.inventory_sources.delete');
 
+            // Vendor Source Routes
+            Route::get('/vendor_sources', 'Webkul\Vendor\Http\Controllers\VendorSourceController@index')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.index'
+            ])->name('admin.vendor_sources.index');
+
+            Route::get('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@create')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.create'
+            ])->name('admin.vendor_sources.create');
+
+            Route::post('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@store')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.index'
+            ])->name('admin.vendor_sources.store');
+
+            Route::get('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@edit')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.edit'
+            ])->name('admin.vendor_sources.edit');
+
+            Route::put('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@update')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.index'
+            ])->name('admin.vendor_sources.update');
+
+            Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('admin.vendor_sources.delete');
+
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [
                 'view' => 'admin::settings.channels.index'

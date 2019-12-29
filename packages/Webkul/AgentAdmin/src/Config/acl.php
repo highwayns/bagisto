@@ -416,7 +416,27 @@ return [
         'name' => 'admin::app.acl.delete',
         'route' => 'admin.cart-rule.delete',
         'sort' => 3
-    ],
+    ], [
+        'key' => 'settings.vendor_sources',
+        'name' => 'admin::app.acl.vendor-sources',
+        'route' => 'admin.vendor_sources.index',
+        'sort' => 9
+    ], [
+        'key' => 'settings.vendor_sources.create',
+        'name' => 'admin::app.acl.create',
+        'route' => 'admin.vendor_sources.create',
+        'sort' => 1
+    ], [
+        'key' => 'settings.vendor_sources.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => 'admin.vendor_sources.edit',
+        'sort' => 2
+    ], [
+        'key' => 'settings.vendor_sources.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => 'admin.vendor_sources.delete',
+        'sort' => 3
+    ]
 ];
 
 ?>

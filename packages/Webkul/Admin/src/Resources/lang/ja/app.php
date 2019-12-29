@@ -75,7 +75,8 @@ return [
         'tax-rates' => '税率一覧',
         'promotion' => '促販',
         'discount' => '割引',
-        'cms' => 'コンテンツ管理システム'
+        'cms' => 'コンテンツ管理システム',
+        'vendor-sources' => 'ベンダーソース一覧'
     ],
 
     'acl' => [
@@ -110,7 +111,8 @@ return [
         'create' => '追加',
         'delete' => '削除',
         'promotions' => '促販一覧',
-        'cart-rules' => 'カートルール一覧'
+        'cart-rules' => 'カートルール一覧',
+        'vendor-sources' => 'ベンダーソース一覧'
     ],
 
     'dashboard' => [
@@ -203,7 +205,8 @@ return [
         'for-guest' => 'ゲスト用',
         'order_number' => '注文番号',
         'refund-date' => '返金日付',
-        'refunded' => '返金済み'
+        'refunded' => '返金済み',
+        'vendor-source' => 'ベンダーソース'
     ],
 
     'account' => [
@@ -393,6 +396,7 @@ return [
             'creation-error' => 'この注文は運輸作成ができません.',
             'order-error' => 'この注文は運輸作成許可がありません.',
             'quantity-invalid' => '要求された数量が不可.',
+            'vendor-source' => 'ベンダーソース'
         ],
 
         'refunds' => [
@@ -734,6 +738,41 @@ return [
             'delete-success' => '在庫ソース削除成功.',
             'last-delete-error' => '少なくとも１在庫ソースが必要.',
         ],
+        'vendor_sources' => [
+            'title' => 'ベンダー一覧',
+            'add-title' => 'ベンダー追加',
+            'edit-title' => 'ベンダー編集',
+            'save-btn-title' => 'ベンダー保存',
+            'vendor_id' =>'ベンダーID',
+            'name' => '名称',
+            'name_kana' => 'カタカナ',
+            'creditcard_main_apikey' => 'クレジットカード',
+            'creditcard_denki_apikey' => 'クレジットカード',
+            'account_transfer_company_code' => '会社コート',
+            'smartcis_my_auth_id' => 'スマートシスID',
+            'smartcis_my_auth_key' => 'スマートシス',
+            'vendor_denki_shop_code' => '電気ベンダーコート',
+            'updated_at' => '更新時間',
+            'updated_user_id' => '更新者ID',
+            'created_at' => '作成時間',
+            'created_user_id' => '作成者ID',
+            'gmo_main_site_id' => 'gmoサイトID',
+            'gmo_main_site_pass' => 'gmoサイトパスワード',
+            'gmo_main_shop_id' => 'gmo商品サイトID',
+            'gmo_main_shop_pass' => 'gmo商品サイトパスワード',
+            'gmo_denki_site_id' => 'gmo電気サイトID',
+            'gmo_denki_site_pass' => 'gmo電気サイトパスワード',
+            'gmo_denki_shop_id' => 'gmo電気商品サイトID',
+            'gmo_denki_shop_pass' => 'gmo電気商品サイトパスワード',
+            'aplus_bank_consignor_number' => '口座番号',
+            'aplus_division' => '分区',
+            'aplus_conveni_consignor_number' => '荷送人申請書番号',
+            'aplus_transfer_date' => 'データ転移',
+            'create-success' => 'ベンダー作成成功.',
+            'update-success' => 'ベンダー更新成功.',
+            'delete-success' => 'ベンダー削除成功.',
+            'last-delete-error' => '少なくとも１ベンダーが必要.',
+        ],
         'channels' => [
             'title' => 'キャンネル一覧',
             'add-title' => 'キャンネル追加',
@@ -764,7 +803,8 @@ return [
             'seo' => 'ホームページSEO',
             'seo-title' => 'メタタイトル',
             'seo-description' => 'メタ説明',
-            'seo-keywords' => 'メタキーワード一覧'
+            'seo-keywords' => 'メタキーワード一覧',
+            'vendor_sources' => 'ベンダーソース一覧'
         ],
 
         'sliders' => [
@@ -1180,6 +1220,7 @@ return [
             'review' => 'レビュー',
             'allow-guest-review' => 'ゲストレビュー許可',
             'inventory' => '在庫',
+            'vendor' => 'ベンダー',
             'stock-options' => 'ストックオプション',
             'allow-backorders' => '管理者注文許可',
             'customer' => '顧客',

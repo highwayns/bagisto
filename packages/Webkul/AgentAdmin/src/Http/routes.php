@@ -535,6 +535,29 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::post('/inventory_sources/delete/{id}', 'Webkul\Inventory\Http\Controllers\InventorySourceController@destroy')->name('admin.inventory_sources.delete');
 
+            // Vendor Source Routes
+            Route::get('/vendor_sources', 'Webkul\Vendor\Http\Controllers\VendorSourceController@index')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.index'
+            ])->name('admin.vendor_sources.index');
+
+            Route::get('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@create')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.create'
+            ])->name('admin.vendor_sources.create');
+
+            Route::post('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@store')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.index'
+            ])->name('admin.vendor_sources.store');
+
+            Route::get('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@edit')->defaults('_config', [
+                'view' => 'admin::settings.vendor_sources.edit'
+            ])->name('admin.vendor_sources.edit');
+
+            Route::put('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@update')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.index'
+            ])->name('admin.vendor_sources.update');
+
+            Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('admin.vendor_sources.delete');
+
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [
                 'view' => 'admin::settings.channels.index'
@@ -726,37 +749,37 @@ Route::group(['middleware' => ['web']], function () {
             });
 
             Route::prefix('cms')->group(function () {
-                Route::get('/', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@index')->defaults('_config', [
+                Route::get('/', 'Webkul\CMS\Http\Controllers\Admin\PageController@index')->defaults('_config', [
                     'view' => 'admin::cms.index'
                 ])->name('admin.cms.index');
 
-                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@preview')->name('admin.cms.preview');
+                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\Admin\PageController@preview')->name('admin.cms.preview');
 
-                Route::get('create', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@create')->defaults('_config', [
+                Route::get('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@create')->defaults('_config', [
                     'view' => 'admin::cms.create'
                 ])->name('admin.cms.create');
 
-                Route::post('create', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@store')->defaults('_config', [
+                Route::post('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@store')->defaults('_config', [
                     'redirect' => 'admin.cms.index'
                 ])->name('admin.cms.store');
 
-                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@edit')->defaults('_config', [
+                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@edit')->defaults('_config', [
                     'view' => 'admin::cms.edit'
                 ])->name('admin.cms.edit');
 
-                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@update')->defaults('_config', [
+                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@update')->defaults('_config', [
                     'redirect' => 'admin.cms.index'
                 ])->name('admin.cms.update');
 
-                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@delete')->defaults('_config', [
+                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
                     'redirect' => 'admin.cms.index'
                 ])->name('admin.cms.delete');
 
-                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@massDelete')->defaults('_config', [
+                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\Admin\PageController@massDelete')->defaults('_config', [
                     'redirect' => 'admin.cms.index'
                 ])->name('admin.cms.mass-delete');
 
-                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@delete')->defaults('_config', [
+                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
                 //     'redirect' => 'admin.cms.index'
                 // ])->name('admin.cms.delete');
             });
