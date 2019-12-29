@@ -14,7 +14,7 @@ class CreateVendorSourcesTable extends Migration
     public function up()
     {
         Schema::create('vendor_sources', function (Blueprint $table) {
-            $table->increments('vendor_id');
+            $table->increments('id');
             $table->string('name',60);
             $table->string('name_kana',40);
             $table->string('creditcard_main_apikey',30)->nullable();;

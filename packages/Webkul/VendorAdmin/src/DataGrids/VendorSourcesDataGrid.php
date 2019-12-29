@@ -19,7 +19,7 @@ class VendorSourcesDataGrid extends DataGrid
 
     public function prepareQueryBuilder()
     {
-        $queryBuilder = DB::table('vendor_sources')->addSelect('vendor_id', 'name', 'name_kana', 'created_at');
+        $queryBuilder = DB::table('vendor_sources')->addSelect('id', 'name', 'name_kana', 'created_at');
 
         $this->setQueryBuilder($queryBuilder);
     }
@@ -27,8 +27,8 @@ class VendorSourcesDataGrid extends DataGrid
     public function addColumns()
     {
         $this->addColumn([
-            'index' => 'vendor_id',
-            'label' => trans('admin::app.datagrid.vendor_id'),
+            'index' => 'id',
+            'label' => trans('admin::app.datagrid.id'),
             'type' => 'number',
             'searchable' => false,
             'sortable' => true,

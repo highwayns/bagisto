@@ -68,7 +68,7 @@ class VendorSourceController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'vendor_id'           => ['required'],
+            'id'           => ['required'],
             'name'           => 'required',
             'name_kana'   => 'required',
             'account_transfer_company_code'  => 'required'
@@ -109,7 +109,7 @@ class VendorSourceController extends Controller
     public function update($id)
     {
         $this->validate(request(), [
-            'vendor_id'           => ['required'],
+            'id'           => ['required'],
             'name'           => 'required',
             'name_kana'   => 'required',
             'account_transfer_company_code'  => 'required'

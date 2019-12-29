@@ -12,7 +12,7 @@ class VendorTableSeeder extends Seeder
         DB::table('vendor_sources')->delete();
 
         DB::table('vendor_sources')->insert([
-            'vendor_id' => 1,
+            'id' => 1,
             'name' => 'wp',
             'name_kana' => 'ou hou',
             'creditcard_main_apikey' => '123456789',
