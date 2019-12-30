@@ -57,7 +57,7 @@ class RefundController extends Controller
         RefundRepository $refundRepository
     )
     {
-        $this->middleware('admin');
+        $this->middleware('agentadmin');
 
         $this->_config = request('_config');
 

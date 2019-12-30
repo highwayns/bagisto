@@ -4,437 +4,437 @@ return [
     [
         'key' => 'dashboard',
         'name' => 'admin::app.acl.dashboard',
-        'route' => 'admin.dashboard.index',
+        'route' => 'vendoradmin.dashboard.index',
         'sort' => 1
     ], [
         'key' => 'sales',
         'name' => 'admin::app.acl.sales',
-        'route' => 'admin.sales.orders.index',
+        'route' => 'vendoradmin.sales.orders.index',
         'sort' => 2
     ], [
         'key' => 'sales.orders',
         'name' => 'admin::app.acl.orders',
-        'route' => 'admin.sales.orders.index',
+        'route' => 'vendoradmin.sales.orders.index',
         'sort' => 1
     ], [
         'key' => 'sales.invoices',
         'name' => 'admin::app.acl.invoices',
-        'route' => 'admin.sales.invoices.index',
+        'route' => 'vendoradmin.sales.invoices.index',
         'sort' => 2
     ], [
         'key' => 'sales.shipments',
         'name' => 'admin::app.acl.shipments',
-        'route' => 'admin.sales.shipments.index',
+        'route' => 'vendoradmin.sales.shipments.index',
         'sort' => 3
     ], [
         'key' => 'catalog',
         'name' => 'admin::app.acl.catalog',
-        'route' => 'admin.catalog.index',
+        'route' => 'vendoradmin.catalog.index',
         'sort' => 3
     ], [
         'key' => 'catalog.products',
         'name' => 'admin::app.acl.products',
-        'route' => 'admin.catalog.products.index',
+        'route' => 'vendoradmin.catalog.products.index',
         'sort' => 1
     ], [
         'key' => 'catalog.products.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.catalog.products.create',
+        'route' => 'vendoradmin.catalog.products.create',
         'sort' => 1
     ], [
         'key' => 'catalog.products.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.catalog.products.edit',
+        'route' => 'vendoradmin.catalog.products.edit',
         'sort' => 2
     ], [
         'key' => 'catalog.products.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.catalog.products.delete',
+        'route' => 'vendoradmin.catalog.products.delete',
         'sort' => 3
     ], [
         'key' => 'catalog.categories',
         'name' => 'admin::app.acl.categories',
-        'route' => 'admin.catalog.categories.index',
+        'route' => 'vendoradmin.catalog.categories.index',
         'sort' => 2
     ], [
         'key' => 'catalog.categories.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.catalog.categories.create',
+        'route' => 'vendoradmin.catalog.categories.create',
         'sort' => 1
     ], [
         'key' => 'catalog.categories.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.catalog.categories.edit',
+        'route' => 'vendoradmin.catalog.categories.edit',
         'sort' => 2
     ], [
         'key' => 'catalog.categories.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.catalog.categories.delete',
+        'route' => 'vendoradmin.catalog.categories.delete',
         'sort' => 3
     ], [
         'key' => 'catalog.attributes',
         'name' => 'admin::app.acl.attributes',
-        'route' => 'admin.catalog.attributes.index',
+        'route' => 'vendoradmin.catalog.attributes.index',
         'sort' => 3
     ], [
         'key' => 'catalog.attributes.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.catalog.attributes.create',
+        'route' => 'vendoradmin.catalog.attributes.create',
         'sort' => 1
     ], [
         'key' => 'catalog.attributes.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.catalog.attributes.edit',
+        'route' => 'vendoradmin.catalog.attributes.edit',
         'sort' => 2
     ], [
         'key' => 'catalog.attributes.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.catalog.attributes.delete',
+        'route' => 'vendoradmin.catalog.attributes.delete',
         'sort' => 3
     ], [
         'key' => 'catalog.families',
         'name' => 'admin::app.acl.attribute-families',
-        'route' => 'admin.catalog.families.index',
+        'route' => 'vendoradmin.catalog.families.index',
         'sort' => 4
     ], [
         'key' => 'catalog.families.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.catalog.families.create',
+        'route' => 'vendoradmin.catalog.families.create',
         'sort' => 1
     ], [
         'key' => 'catalog.families.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.catalog.families.edit',
+        'route' => 'vendoradmin.catalog.families.edit',
         'sort' => 2
     ], [
         'key' => 'catalog.families.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.catalog.families.delete',
+        'route' => 'vendoradmin.catalog.families.delete',
         'sort' => 3
     ], [
         'key' => 'customers',
         'name' => 'admin::app.acl.customers',
-        'route' => 'admin.customer.index',
+        'route' => 'vendoradmin.customer.index',
         'sort' => 4
     ], [
         'key' => 'customers.customers',
         'name' => 'admin::app.acl.customers',
-        'route' => 'admin.customer.index',
+        'route' => 'vendoradmin.customer.index',
         'sort' => 1
     ], [
         'key' => 'customers.customers.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.customer.create',
+        'route' => 'vendoradmin.customer.create',
         'sort' => 1
     ], [
         'key' => 'customers.customers.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.customer.edit',
+        'route' => 'vendoradmin.customer.edit',
         'sort' => 2
     ], [
         'key' => 'customers.customers.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.customer.delete',
+        'route' => 'vendoradmin.customer.delete',
         'sort' => 3
     ], [
         'key' => 'customers.groups',
         'name' => 'admin::app.acl.groups',
-        'route' => 'admin.groups.index',
+        'route' => 'vendoradmin.groups.index',
         'sort' => 2
     ], [
         'key' => 'customers.groups.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.groups.create',
+        'route' => 'vendoradmin.groups.create',
         'sort' => 1
     ], [
         'key' => 'customers.groups.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.groups.edit',
+        'route' => 'vendoradmin.groups.edit',
         'sort' => 2
     ], [
         'key' => 'customers.groups.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.groups.delete',
+        'route' => 'vendoradmin.groups.delete',
         'sort' => 3
     ], [
         'key' => 'customers.reviews',
         'name' => 'admin::app.acl.reviews',
-        'route' => 'admin.customer.review.index',
+        'route' => 'vendoradmin.customer.review.index',
         'sort' => 3
     ], [
         'key' => 'customers.reviews.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.customer.review.edit',
+        'route' => 'vendoradmin.customer.review.edit',
         'sort' => 1
     ], [
         'key' => 'customers.reviews.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.customer.review.delete',
+        'route' => 'vendoradmin.customer.review.delete',
         'sort' => 2
     ], [
         'key' => 'configuration',
         'name' => 'admin::app.acl.configure',
-        'route' => 'admin.configuration.index',
+        'route' => 'vendoradmin.configuration.index',
         'sort' => 5
     ], [
         'key' => 'settings',
         'name' => 'admin::app.acl.settings',
-        'route' => 'admin.users.index',
+        'route' => 'vendoradmin.users.index',
         'sort' => 6
     ], [
         'key' => 'settings.locales',
         'name' => 'admin::app.acl.locales',
-        'route' => 'admin.locales.index',
+        'route' => 'vendoradmin.locales.index',
         'sort' => 1
     ], [
         'key' => 'settings.locales.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.locales.create',
+        'route' => 'vendoradmin.locales.create',
         'sort' => 1
     ], [
         'key' => 'settings.locales.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.locales.edit',
+        'route' => 'vendoradmin.locales.edit',
         'sort' => 2
     ], [
         'key' => 'settings.locales.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.locales.delete',
+        'route' => 'vendoradmin.locales.delete',
         'sort' => 3
     ], [
         'key' => 'settings.currencies',
         'name' => 'admin::app.acl.currencies',
-        'route' => 'admin.currencies.index',
+        'route' => 'vendoradmin.currencies.index',
         'sort' => 2
     ], [
         'key' => 'settings.currencies.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.currencies.create',
+        'route' => 'vendoradmin.currencies.create',
         'sort' => 1
     ], [
         'key' => 'settings.currencies.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.currencies.edit',
+        'route' => 'vendoradmin.currencies.edit',
         'sort' => 2
     ], [
         'key' => 'settings.currencies.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.currencies.delete',
+        'route' => 'vendoradmin.currencies.delete',
         'sort' => 3
     ], [
         'key' => 'settings.exchange_rates',
         'name' => 'admin::app.acl.exchange-rates',
-        'route' => 'admin.exchange_rates.index',
+        'route' => 'vendoradmin.exchange_rates.index',
         'sort' => 3
     ], [
         'key' => 'settings.exchange_rates.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.exchange_rates.create',
+        'route' => 'vendoradmin.exchange_rates.create',
         'sort' => 1
     ], [
         'key' => 'settings.exchange_rates.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.exchange_rates.edit',
+        'route' => 'vendoradmin.exchange_rates.edit',
         'sort' => 2
     ], [
         'key' => 'settings.exchange_rates.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.exchange_rates.delete',
+        'route' => 'vendoradmin.exchange_rates.delete',
         'sort' => 3
     ], [
         'key' => 'settings.inventory_sources',
         'name' => 'admin::app.acl.inventory-sources',
-        'route' => 'admin.inventory_sources.index',
+        'route' => 'vendoradmin.inventory_sources.index',
         'sort' => 4
     ], [
         'key' => 'settings.inventory_sources.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.inventory_sources.create',
+        'route' => 'vendoradmin.inventory_sources.create',
         'sort' => 1
     ], [
         'key' => 'settings.inventory_sources.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.inventory_sources.edit',
+        'route' => 'vendoradmin.inventory_sources.edit',
         'sort' => 2
     ], [
         'key' => 'settings.inventory_sources.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.inventory_sources.delete',
+        'route' => 'vendoradmin.inventory_sources.delete',
         'sort' => 3
     ], [
         'key' => 'settings.channels',
         'name' => 'admin::app.acl.channels',
-        'route' => 'admin.channels.index',
+        'route' => 'vendoradmin.channels.index',
         'sort' => 5
     ], [
         'key' => 'settings.channels.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.channels.create',
+        'route' => 'vendoradmin.channels.create',
         'sort' => 1
     ], [
         'key' => 'settings.channels.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.channels.edit',
+        'route' => 'vendoradmin.channels.edit',
         'sort' => 2
     ], [
         'key' => 'settings.channels.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.channels.delete',
+        'route' => 'vendoradmin.channels.delete',
         'sort' => 3
     ], [
         'key' => 'settings.users',
         'name' => 'admin::app.acl.users',
-        'route' => 'admin.users.index',
+        'route' => 'vendoradmin.users.index',
         'sort' => 6
     ], [
         'key' => 'settings.users.users',
         'name' => 'admin::app.acl.users',
-        'route' => 'admin.users.index',
+        'route' => 'vendoradmin.users.index',
         'sort' => 1
     ], [
         'key' => 'settings.users.users.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.users.create',
+        'route' => 'vendoradmin.users.create',
         'sort' => 1
     ], [
         'key' => 'settings.users.users.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.users.edit',
+        'route' => 'vendoradmin.users.edit',
         'sort' => 2
     ], [
         'key' => 'settings.users.users.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.users.delete',
+        'route' => 'vendoradmin.users.delete',
         'sort' => 3
     ], [
         'key' => 'settings.users.roles',
         'name' => 'admin::app.acl.roles',
-        'route' => 'admin.roles.index',
+        'route' => 'vendoradmin.roles.index',
         'sort' => 2
     ], [
         'key' => 'settings.users.roles.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.roles.create',
+        'route' => 'vendoradmin.roles.create',
         'sort' => 1
     ], [
         'key' => 'settings.users.roles.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.roles.edit',
+        'route' => 'vendoradmin.roles.edit',
         'sort' => 2
     ], [
         'key' => 'settings.users.roles.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.roles.delete',
+        'route' => 'vendoradmin.roles.delete',
         'sort' => 3
     ], [
         'key' => 'settings.sliders',
         'name' => 'admin::app.acl.sliders',
-        'route' => 'admin.sliders.index',
+        'route' => 'vendoradmin.sliders.index',
         'sort' => 7
     ], [
         'key' => 'settings.sliders.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.sliders.create',
+        'route' => 'vendoradmin.sliders.create',
         'sort' => 1
     ], [
         'key' => 'settings.sliders.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.sliders.edit',
+        'route' => 'vendoradmin.sliders.edit',
         'sort' => 2
     ], [
         'key' => 'settings.sliders.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.sliders.delete',
+        'route' => 'vendoradmin.sliders.delete',
         'sort' => 3
     ], [
         'key' => 'settings.taxes',
         'name' => 'admin::app.acl.taxes',
-        'route' => 'admin.tax-categories.index',
+        'route' => 'vendoradmin.tax-categories.index',
         'sort' => 8
     ], [
         'key' => 'settings.taxes.tax-categories',
         'name' => 'admin::app.acl.tax-categories',
-        'route' => 'admin.tax-categories.index',
+        'route' => 'vendoradmin.tax-categories.index',
         'sort' => 1
     ], [
         'key' => 'settings.taxes.tax-categories.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.tax-categories.create',
+        'route' => 'vendoradmin.tax-categories.create',
         'sort' => 1
     ], [
         'key' => 'settings.taxes.tax-categories.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.tax-categories.edit',
+        'route' => 'vendoradmin.tax-categories.edit',
         'sort' => 2
     ], [
         'key' => 'settings.taxes.tax-categories.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.tax-categories.delete',
+        'route' => 'vendoradmin.tax-categories.delete',
         'sort' => 3
     ], [
         'key' => 'settings.taxes.tax-rates',
         'name' => 'admin::app.acl.tax-rates',
-        'route' => 'admin.tax-rates.index',
+        'route' => 'vendoradmin.tax-rates.index',
         'sort' => 2
     ], [
         'key' => 'settings.taxes.tax-rates.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.tax-rates.create',
+        'route' => 'vendoradmin.tax-rates.create',
         'sort' => 1
     ], [
         'key' => 'settings.taxes.tax-rates.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.tax-rates.edit',
+        'route' => 'vendoradmin.tax-rates.edit',
         'sort' => 2
     ], [
         'key' => 'settings.taxes.tax-rates.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.tax-rates.delete',
+        'route' => 'vendoradmin.tax-rates.delete',
         'sort' => 3
     ], [
         'key' => 'promotions',
         'name' => 'admin::app.acl.promotions',
-        'route' => 'admin.cart-rule.index',
+        'route' => 'vendoradmin.cart-rule.index',
         'sort' => 7
     ], [
         'key' => 'promotions.cart-rule',
         'name' => 'admin::app.acl.cart-rules',
-        'route' => 'admin.cart-rule.index',
+        'route' => 'vendoradmin.cart-rule.index',
         'sort' => 1
     ], [
         'key' => 'promotions.cart-rule.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.cart-rule.create',
+        'route' => 'vendoradmin.cart-rule.create',
         'sort' => 1
     ], [
         'key' => 'promotions.cart-rule.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.cart-rule.edit',
+        'route' => 'vendoradmin.cart-rule.edit',
         'sort' => 2
     ], [
         'key' => 'promotions.cart-rule.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.cart-rule.delete',
+        'route' => 'vendoradmin.cart-rule.delete',
         'sort' => 3
     ], [
-        'key' => 'settings.vendor_sources',
-        'name' => 'admin::app.acl.vendor-sources',
-        'route' => 'admin.vendor_sources.index',
+        'key' => 'settings.agent_sources',
+        'name' => 'admin::app.acl.agent-sources',
+        'route' => 'vendoradmin.agent_sources.index',
         'sort' => 9
     ], [
-        'key' => 'settings.vendor_sources.create',
+        'key' => 'settings.agent_sources.create',
         'name' => 'admin::app.acl.create',
-        'route' => 'admin.vendor_sources.create',
+        'route' => 'vendoradmin.agent_sources.create',
         'sort' => 1
     ], [
-        'key' => 'settings.vendor_sources.edit',
+        'key' => 'settings.agent_sources.edit',
         'name' => 'admin::app.acl.edit',
-        'route' => 'admin.vendor_sources.edit',
+        'route' => 'vendoradmin.agent_sources.edit',
         'sort' => 2
     ], [
-        'key' => 'settings.vendor_sources.delete',
+        'key' => 'settings.agent_sources.delete',
         'name' => 'admin::app.acl.delete',
-        'route' => 'admin.vendor_sources.delete',
+        'route' => 'vendoradmin.agent_sources.delete',
         'sort' => 3
     ]
 ];

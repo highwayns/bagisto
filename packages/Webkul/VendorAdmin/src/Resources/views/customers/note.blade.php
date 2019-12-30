@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.customer.note.store', $customer->id) }}">
+        <form method="POST" action="{{ route('vendoradmin.customer.note.store', $customer->id) }}">
             <div class="page-header">
                 <div class="page-title">
                     <h1>

@@ -57,7 +57,7 @@ class ShipmentController extends Controller
         OrderItemRepository $orderItemRepository
     )
     {
-        $this->middleware('admin');
+        $this->middleware('vendoradmin');
 
         $this->_config = request('_config');
 

@@ -76,7 +76,8 @@ return [
         'promotion' => '促販',
         'discount' => '割引',
         'cms' => 'コンテンツ管理システム',
-        'vendor-sources' => 'ベンダーソース一覧'
+        'vendor-sources' => 'ベンダーソース一覧',
+        'agent-sources' => '代理店ソース一覧'
     ],
 
     'acl' => [
@@ -112,7 +113,8 @@ return [
         'delete' => '削除',
         'promotions' => '促販一覧',
         'cart-rules' => 'カートルール一覧',
-        'vendor-sources' => 'ベンダーソース一覧'
+        'vendor-sources' => 'ベンダーソース一覧',
+        'agent-sources' => '代理店ソース一覧'
     ],
 
     'dashboard' => [
@@ -208,7 +210,8 @@ return [
         'order_number' => '注文番号',
         'refund-date' => '返金日付',
         'refunded' => '返金済み',
-        'vendor-source' => 'ベンダーソース'
+        'vendor-source' => 'ベンダーソース',
+        'agent-source' => '代理店ソース'
     ],
 
     'account' => [
@@ -398,7 +401,8 @@ return [
             'creation-error' => 'この注文は運輸作成ができません.',
             'order-error' => 'この注文は運輸作成許可がありません.',
             'quantity-invalid' => '要求された数量が不可.',
-            'vendor-source' => 'ベンダーソース'
+            'vendor-source' => 'ベンダーソース',
+            'agent-source' => '代理店ソース'
         ],
 
         'refunds' => [
@@ -746,7 +750,14 @@ return [
             'edit-title' => 'ベンダー編集',
             'save-btn-title' => 'ベンダー保存',
             'id' =>'ベンダーID',
+            'email' => 'Eメール',
             'name' => '名称',
+            'password' => 'パスワード',
+            'confirm-password' => 'パスワード（確認）',
+            'status-and-role' => 'ステータス＆ロール',
+            'role' => 'ロール',
+            'status' => 'ステータス',
+            'account-is-active' => 'アカウントは活性化している',
             'name_kana' => 'カタカナ',
             'creditcard_main_apikey' => 'クレジットカード',
             'creditcard_denki_apikey' => 'クレジットカード',
@@ -770,6 +781,39 @@ return [
             'aplus_division' => '分区',
             'aplus_conveni_consignor_number' => '荷送人申請書番号',
             'aplus_transfer_date' => 'データ転移',
+            'create-success' => 'ベンダー作成成功.',
+            'update-success' => 'ベンダー更新成功.',
+            'delete-success' => 'ベンダー削除成功.',
+            'last-delete-error' => '少なくとも１ベンダーが必要.',
+        ],
+        'agent_sources' => [
+            'title' => '代理店一覧',
+            'add-title' => '代理店追加',
+            'edit-title' => '代理店編集',
+            'save-btn-title' => '代理店保存',
+            'id' =>'代理店ID',
+            'email' => 'Eメール',
+            'name' => '名称',
+            'password' => 'パスワード',
+            'confirm-password' => 'パスワード（確認）',
+            'status-and-role' => 'ステータス＆ロール',
+            'role' => 'ロール',
+            'status' => 'ステータス',
+            'account-is-active' => 'アカウントは活性化している',
+            'vendor_id' => 'ベンダーID',
+            'agency_group_id' => '代理店グループID',
+            'postal_code' => '郵便番号',
+            'pref' => '都道府県',
+            'city' => '市町村',
+            'address' => '番地',
+            'building_name' => '建物名',
+            'tel' => '電話番号',
+            'fax' => 'FAX番号',
+            'agency_denki_shop_code' => 'SmartCIS代理店ID',
+            'created_at' => '作成日時',
+            'created_user_id' => '作成ユーザーID',
+            'updated_at' => '更新日時',
+            'updated_user_id' => '更新ユーザーID',
             'create-success' => 'ベンダー作成成功.',
             'update-success' => 'ベンダー更新成功.',
             'delete-success' => 'ベンダー削除成功.',
@@ -806,7 +850,8 @@ return [
             'seo-title' => 'メタタイトル',
             'seo-description' => 'メタ説明',
             'seo-keywords' => 'メタキーワード一覧',
-            'vendor_sources' => 'ベンダーソース一覧'
+            'vendor_sources' => 'ベンダーソース一覧',
+            'agent_sources' => '代理店ソース一覧'
         ],
 
         'sliders' => [
@@ -1223,6 +1268,7 @@ return [
             'allow-guest-review' => 'ゲストレビュー許可',
             'inventory' => '在庫',
             'vendor' => 'ベンダー',
+            'agent' => '代理店',
             'stock-options' => 'ストックオプション',
             'allow-backorders' => '管理者注文許可',
             'customer' => '顧客',

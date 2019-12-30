@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" id="page-form" action="{{ route('admin.cms.edit', $page->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" id="page-form" action="{{ route('agentadmin.cms.edit', $page->id) }}" @submit.prevent="onSubmit">
 
             <div class="page-header">
                 <div class="page-title">
@@ -110,8 +110,8 @@
         $(document).ready(function () {
             $('#preview').on('click', function(e) {
                 var form = $('#page-form').serialize();
-                // var url = '{{ route('admin.cms.preview', $page->id) }}' + '?' + form;
-                var url = '{{ route('admin.cms.preview', $page->id) }}';
+                // var url = '{{ route('agentadmin.cms.preview', $page->id) }}' + '?' + form;
+                var url = '{{ route('agentadmin.cms.preview', $page->id) }}';
 
                 window.open(url, '_blank').focus();
 
@@ -122,7 +122,7 @@
                 $('#channel-switcher').val()
                 var query = '?channel=' + $('#channel-switcher').val() + '&locale=' + $('#locale-switcher').val();
 
-                window.location.href = "{{ route('admin.cms.edit', $page->id)  }}" + query;
+                window.location.href = "{{ route('agentadmin.cms.edit', $page->id)  }}" + query;
             });
 
             tinymce.init({

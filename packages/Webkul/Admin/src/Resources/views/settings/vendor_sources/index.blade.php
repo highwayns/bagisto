@@ -5,12 +5,12 @@
 @stop
 
 @section('content')
+
     <div class="content">
         <div class="page-header">
             <div class="page-title">
                 <h1>{{ __('admin::app.settings.vendor_sources.title') }}</h1>
             </div>
-
             <div class="page-action">
                 <a href="{{ route('admin.vendor_sources.create') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.settings.vendor_sources.add-title') }}
@@ -19,8 +19,11 @@
         </div>
 
         <div class="page-content">
-            @inject('vendor_sources','Webkul\Admin\DataGrids\VendorSourcesDataGrid')
-            {!! $vendor_sources->render() !!}
+
+            @inject('datagrid','Webkul\Admin\DataGrids\VendorSourcesDataGrid')
+            {!! $datagrid->render() !!}
+            {{-- <datetime></datetime> --}}
         </div>
     </div>
+
 @stop

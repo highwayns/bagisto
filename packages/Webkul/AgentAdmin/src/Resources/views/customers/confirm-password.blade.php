@@ -16,7 +16,7 @@
         </div>
 
         <div class="page-content">
-            <form action="{{ route('admin.users.confirm.destroy') }}" method="POST" @submit.prevent="onSubmit">
+            <form action="{{ route('agentadmin.users.confirm.destroy') }}" method="POST" @submit.prevent="onSubmit">
                 @csrf
                 <div class="control-group" :class="[errors.has('password') ? 'has-error' : '']">
                     <label for="password" class="required">

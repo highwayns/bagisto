@@ -16,6 +16,10 @@ class CreateVendorSourcesTable extends Migration
         Schema::create('vendor_sources', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',60);
+            $table->string('email')->unique();
+            $table->string('password')->nullable();
+            $table->boolean('status')->default(0);
+            $table->integer('role_id')->unsigned();
             $table->string('name_kana',40);
             $table->string('creditcard_main_apikey',30)->nullable();;
             $table->string('creditcard_denki_apikey',30)->nullable();;

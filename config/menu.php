@@ -4,6 +4,14 @@ return [
     'admin' => [
 
     ],
+
+    'vendoradmin' => [
+
+    ],
+
+    'agentadmin' => [
+
+    ],
     
     'customer' => [
 

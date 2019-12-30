@@ -88,7 +88,7 @@
                 $('#channel-switcher').val()
                 var query = '?channel=' + $('#channel-switcher').val() + '&locale=' + $('#locale-switcher').val();
 
-                window.location.href = "{{ route('admin.configuration.index', [request()->route('slug'), request()->route('slug2')]) }}" + query;
+                window.location.href = "{{ route('vendoradmin.configuration.index', [request()->route('slug'), request()->route('slug2')]) }}" + query;
             })
         });
     </script>

@@ -155,7 +155,7 @@
                                 @foreach ($statistics['top_selling_categories'] as $item)
 
                                     <li>
-                                        <a href="{{ route('admin.catalog.categories.edit', $item->category_id) }}">
+                                        <a href="{{ route('vendoradmin.catalog.categories.edit', $item->category_id) }}">
                                             <div class="description">
                                                 <div class="name">
                                                     {{ $item->name }}
@@ -206,7 +206,7 @@
                             @foreach ($statistics['top_selling_products'] as $item)
 
                                 <li>
-                                    <a href="{{ route('admin.catalog.products.edit', $item->product_id) }}">
+                                    <a href="{{ route('vendoradmin.catalog.products.edit', $item->product_id) }}">
                                         <div class="product image">
                                             <?php $productBaseImage = $productImageHelper->getProductBaseImage($item->product); ?>
 
@@ -258,7 +258,7 @@
 
                                 <li>
                                     @if ($item->customer_id)
-                                        <a href="{{ route('admin.customer.edit', $item->customer_id) }}">
+                                        <a href="{{ route('vendoradmin.customer.edit', $item->customer_id) }}">
                                     @endif
 
                                         <div class="image">
@@ -316,7 +316,7 @@
                             @foreach ($statistics['stock_threshold'] as $item)
 
                                 <li>
-                                    <a href="{{ route('admin.catalog.products.edit', $item->product_id) }}">
+                                    <a href="{{ route('vendoradmin.catalog.products.edit', $item->product_id) }}">
                                         <div class="image">
                                             <?php $productBaseImage = $productImageHelper->getProductBaseImage($item->product); ?>
 

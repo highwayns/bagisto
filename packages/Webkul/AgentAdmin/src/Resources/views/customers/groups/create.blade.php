@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.groups.store') }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('agentadmin.groups.store') }}" @submit.prevent="onSubmit">
 
             <div class="page-header">
                 <div class="page-title">

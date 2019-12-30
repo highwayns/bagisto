@@ -12,7 +12,7 @@
             </div>
 
             <div class="page-action">
-                <a href="{{ route('admin.channels.create') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('vendoradmin.channels.create') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.settings.channels.add-title') }}
                 </a>
             </div>

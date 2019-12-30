@@ -25,13 +25,13 @@ class AgentAdminServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../Http/routes.php');
 
-        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'admin');
+        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'agentadmin');
 
         $this->publishes([
-            __DIR__ . '/../../publishable/assets' => public_path('vendor/webkul/admin/assets'),
+            __DIR__ . '/../../publishable/assets' => public_path('vendor/webkul/agentadmin/assets'),
         ], 'public');
 
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'admin');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'agentadmin');
 
         $this->composeView();
 
@@ -62,26 +62,26 @@ class AgentAdminServiceProvider extends ServiceProvider
      */
     protected function composeView()
     {
-        view()->composer(['admin::layouts.nav-left', 'admin::layouts.nav-aside', 'admin::layouts.tabs'], function ($view) {
+        view()->composer(['agentadmin::layouts.nav-left', 'agentadmin::layouts.nav-aside', 'agentadmin::layouts.tabs'], function ($view) {
             $tree = Tree::create();
 
-            $permissionType = auth()->guard('admin')->user()->role->permission_type;
-            $allowedPermissions = auth()->guard('admin')->user()->role->permissions;
+            $permissionType = auth()->guard('agentadmin')->user()->role->permission_type;
+            $allowedPermissions = auth()->guard('agentadmin')->user()->role->permissions;
 
-            foreach (config('menu.admin') as $index => $item) {
+            foreach (config('menu.agentadmin') as $index => $item) {
                 if (! bouncer()->hasPermission($item['key'])) {
                     continue;
                 }
 
-                if ($index + 1 < count(config('menu.admin')) && $permissionType != 'all') {
-                    $permission = config('menu.admin')[$index + 1];
+                if ($index + 1 < count(config('menu.agentadmin')) && $permissionType != 'all') {
+                    $permission = config('menu.agentadmin')[$index + 1];
 
                     if (substr_count($permission['key'], '.') == 2 && substr_count($item['key'], '.') == 1) {
                         foreach ($allowedPermissions as $key => $value) {
                             if ($item['key'] == $value) {
                                 $neededItem = $allowedPermissions[$key + 1];
 
-                                foreach (config('menu.admin') as $key1 => $findMatced) {
+                                foreach (config('menu.agentadmin') as $key1 => $findMatced) {
                                     if ($findMatced['key'] == $neededItem) {
                                         $item['route'] = $findMatced['route'];
                                     }
@@ -99,11 +99,11 @@ class AgentAdminServiceProvider extends ServiceProvider
             $view->with('menu', $tree);
         });
 
-        view()->composer(['admin::users.roles.create', 'admin::users.roles.edit'], function ($view) {
+        view()->composer(['agentadmin::users.roles.create', 'agentadmin::users.roles.edit'], function ($view) {
             $view->with('acl', $this->createACL());
         });
         
-        view()->composer(['admin::catalog.products.create'], function ($view) {
+        view()->composer(['agentadmin::catalog.products.create'], function ($view) {
             $items = array();
 
             foreach (config('product_types') as $item) {
@@ -161,7 +161,7 @@ class AgentAdminServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/menu.php', 'menu.admin'
+            dirname(__DIR__) . '/Config/menu.php', 'menu.agentadmin'
         );
 
         $this->mergeConfigFrom(

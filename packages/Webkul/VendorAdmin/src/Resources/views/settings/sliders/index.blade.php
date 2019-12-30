@@ -14,7 +14,7 @@
             </div>
 
             <div class="page-action">
-                <a href="{{ route('admin.sliders.store') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('vendoradmin.sliders.store') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.settings.sliders.add-title') }}
                 </a>
             </div>

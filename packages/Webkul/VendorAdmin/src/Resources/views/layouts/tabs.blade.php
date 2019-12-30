@@ -31,7 +31,7 @@
                 @foreach ($items as $key => $item)
 
                     <li class="{{ $key == request()->route('slug2') ? 'active' : '' }}">
-                        <a href="{{ route('admin.configuration.index', (request()->route('slug') . '/' . $key)) }}">
+                        <a href="{{ route('vendoradmin.configuration.index', (request()->route('slug') . '/' . $key)) }}">
                             {{ trans($item['name']) }}
                         </a>
                     </li>

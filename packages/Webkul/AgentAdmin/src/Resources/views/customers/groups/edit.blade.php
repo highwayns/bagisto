@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.groups.update', $group->id) }}">
+        <form method="POST" action="{{ route('agentadmin.groups.update', $group->id) }}">
 
             <div class="page-header">
                 <div class="page-title">

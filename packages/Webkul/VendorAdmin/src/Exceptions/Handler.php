@@ -28,7 +28,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        $path = $this->isAdminUri() ? 'admin' : 'shop';
+        $path = $this->isAdminUri() ? 'vendoradmin' : 'shop';
 
         if ($exception instanceof HttpException) {
             $statusCode = in_array($exception->getStatusCode(), [401, 403, 404, 503]) ? $exception->getStatusCode() : 500;
@@ -61,7 +61,7 @@ class Handler extends ExceptionHandler
 
     private function isAdminUri()
     {
-        return strpos(\Illuminate\Support\Facades\Request::path(), 'admin') !== false ? true : false;
+        return strpos(\Illuminate\Support\Facades\Request::path(), 'vendoradmin') !== false ? true : false;
     }
 
     private function response($path, $statusCode)

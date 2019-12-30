@@ -12,7 +12,7 @@
 
     @push('scripts')
         <script type="text/x-template" id="cart-rule-form-template">
-            <form method="POST" action="{{ route('admin.cart-rule.update', $cart_rule[3]->id) }}" @submit.prevent="onSubmit">
+            <form method="POST" action="{{ route('agentadmin.cart-rule.update', $cart_rule[3]->id) }}" @submit.prevent="onSubmit">
                 @csrf
 
                 <div class="page-header">

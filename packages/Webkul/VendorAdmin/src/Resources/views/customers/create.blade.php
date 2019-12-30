@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.customer.store') }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('vendoradmin.customer.store') }}" @submit.prevent="onSubmit">
 
             <div class="page-header">
                 <div class="page-title">

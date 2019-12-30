@@ -558,6 +558,29 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('admin.vendor_sources.delete');
 
+            // Agent Source Routes
+            Route::get('/agent_sources', 'Webkul\Agent\Http\Controllers\AgentSourceController@index')->defaults('_config', [
+                'view' => 'admin::settings.agent_sources.index'
+            ])->name('admin.agent_sources.index');
+
+            Route::get('/agent_sources/create', 'Webkul\Agent\Http\Controllers\AgentSourceController@create')->defaults('_config', [
+                'view' => 'admin::settings.agent_sources.create'
+            ])->name('admin.agent_sources.create');
+
+            Route::post('/agent_sources/create', 'Webkul\Agent\Http\Controllers\AgentSourceController@store')->defaults('_config', [
+                'redirect' => 'admin.agent_sources.index'
+            ])->name('admin.agent_sources.store');
+
+            Route::get('/agent_sources/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@edit')->defaults('_config', [
+                'view' => 'admin::settings.agent_sources.edit'
+            ])->name('admin.agent_sources.edit');
+
+            Route::put('/agent_sources/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@update')->defaults('_config', [
+                'redirect' => 'admin.agent_sources.index'
+            ])->name('admin.agent_sources.update');
+
+            Route::post('/agent_sources/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroy')->name('admin.agent_sources.delete');
+
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [
                 'view' => 'admin::settings.channels.index'

@@ -10,7 +10,7 @@
     <div class="content full-page">
         {!! view_render_event('admin.customer.addresses.edit.before', ['address' => $address]) !!}
 
-            <form method="post" action="{{ route('admin.customer.addresses.update', $address->id) }}" @submit.prevent="onSubmit">
+            <form method="post" action="{{ route('agentadmin.customer.addresses.update', $address->id) }}" @submit.prevent="onSubmit">
                 <div class="page-header">
                     <div class="page-title">
                         <h1>{{ __('admin::app.customers.addresses.edit-title') }}</h1>

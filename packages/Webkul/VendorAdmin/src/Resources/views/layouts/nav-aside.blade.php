@@ -19,7 +19,7 @@
         @else
             @foreach ($config->items as $key => $item)
                 <li class="{{ $item['key'] == request()->route('slug') ? 'active' : '' }}">
-                    <a href="{{ route('admin.configuration.index', $item['key']) }}">
+                    <a href="{{ route('vendoradmin.configuration.index', $item['key']) }}">
                         {{ isset($item['name']) ? trans($item['name']) : '' }}
 
                         @if ($item['key'] == request()->route('slug'))

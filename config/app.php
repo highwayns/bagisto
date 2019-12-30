@@ -249,6 +249,7 @@ return [
         Webkul\API\Providers\APIServiceProvider::class,
         Webkul\Discount\Providers\DiscountServiceProvider::class,
         Webkul\CMS\Providers\CMSServiceProvider::class,
+        Webkul\Agent\Providers\AgentServiceProvider::class,
         Webkul\Vendor\Providers\VendorServiceProvider::class
     ],
 

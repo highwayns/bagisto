@@ -25,7 +25,7 @@
 
                 <h1>{{ __('admin::app.users.forget-password.header-title') }}</h1>
 
-                <form method="POST" action="{{ route('admin.forget-password.store') }}" @submit.prevent="onSubmit">
+                <form method="POST" action="{{ route('agentadmin.forget-password.store') }}" @submit.prevent="onSubmit">
                     @csrf
 
                     <div class="control-group" :class="[errors.has('email') ? 'has-error' : '']">
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="control-group" style="margin-bottom: 0">
-                        <a href="{{ route('admin.session.create') }}">
+                        <a href="{{ route('agentadmin.session.create') }}">
                             <i class="icon primary-back-icon"></i>
                             {{ __('admin::app.users.forget-password.back-link-title') }}
                         </a>

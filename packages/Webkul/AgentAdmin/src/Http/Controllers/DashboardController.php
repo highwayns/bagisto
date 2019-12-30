@@ -98,7 +98,7 @@ class DashboardController extends Controller
     {
         $this->_config = request('_config');
 
-        $this->middleware('admin');
+        $this->middleware('agentadmin');
 
         $this->orderRepository = $orderRepository;
 

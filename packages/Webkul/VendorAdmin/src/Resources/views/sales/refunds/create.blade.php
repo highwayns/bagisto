@@ -6,7 +6,7 @@
 
 @section('content-wrapper')
     <div class="content full-page">
-        <form method="POST" action="{{ route('admin.sales.refunds.store', $order->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('vendoradmin.sales.refunds.store', $order->id) }}" @submit.prevent="onSubmit">
             @csrf()
 
             <div class="page-header">
@@ -43,7 +43,7 @@
                                         </span>
 
                                         <span class="value">
-                                            <a href="{{ route('admin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
+                                            <a href="{{ route('vendoradmin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
                                         </span>
                                     </div>
 
@@ -412,7 +412,7 @@
                 updateQty: function() {
                     var this_this = this;
 
-                    this.$http.post("{{ route('admin.sales.refunds.update_qty', $order->id) }}", this.refund.items)
+                    this.$http.post("{{ route('vendoradmin.sales.refunds.update_qty', $order->id) }}", this.refund.items)
                         .then(function(response) {
                             if (! response.data) {
                                 window.flashMessages = [{

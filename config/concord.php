@@ -16,6 +16,7 @@ return [
         \Webkul\Customer\Providers\ModuleServiceProvider::class,
         \Webkul\Inventory\Providers\ModuleServiceProvider::class,
         \Webkul\Vendor\Providers\ModuleServiceProvider::class,
+        \Webkul\Agent\Providers\ModuleServiceProvider::class,
         \Webkul\Product\Providers\ModuleServiceProvider::class,
         \Webkul\Sales\Providers\ModuleServiceProvider::class,
         \Webkul\Tax\Providers\ModuleServiceProvider::class,

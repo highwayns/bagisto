@@ -6,7 +6,7 @@
 
 @section('content-wrapper')
     <div class="content full-page">
-        <form method="POST" action="{{ route('admin.sales.shipments.store', $order->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('agentadmin.sales.shipments.store', $order->id) }}" @submit.prevent="onSubmit">
             @csrf()
 
             <div class="page-header">
@@ -43,7 +43,7 @@
                                         </span>
 
                                         <span class="value">
-                                            <a href="{{ route('admin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
+                                            <a href="{{ route('agentadmin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
                                         </span>
                                     </div>
 

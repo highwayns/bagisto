@@ -35,7 +35,7 @@ class OrderController extends Controller
      */
     public function __construct(OrderRepository $orderRepository)
     {
-        $this->middleware('admin');
+        $this->middleware('vendoradmin');
 
         $this->_config = request('_config');
 

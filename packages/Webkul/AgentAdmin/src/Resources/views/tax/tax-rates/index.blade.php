@@ -25,7 +25,7 @@
                     </span>
                 </div>
 
-                <a href="{{ route('admin.tax-rates.show') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('agentadmin.tax-rates.show') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.settings.tax-rates.add-title') }}
                 </a>
             </div>
@@ -48,7 +48,7 @@
         <h3 slot="header">{{ __('admin::app.export.upload') }}</h3>
         <div slot="body">
 
-            <form method="POST" action="{{ route('admin.tax-rates.import') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
+            <form method="POST" action="{{ route('agentadmin.tax-rates.import') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
                 @csrf()
                 <div class="control-group" :class="[errors.has('file') ? 'has-error' : '']">
                     <label for="file" class="required">{{ __('admin::app.export.file') }}</label>

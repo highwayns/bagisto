@@ -223,5 +223,11 @@ return [
         'route' => 'admin.vendor_sources.index',
         'sort' => 9,
         'icon-class' => ''
+    ], [
+        'key' => 'settings.agent_sources',
+        'name' => 'admin::app.layouts.agent-sources',
+        'route' => 'admin.agent_sources.index',
+        'sort' => 10,
+        'icon-class' => ''
     ]
 ];

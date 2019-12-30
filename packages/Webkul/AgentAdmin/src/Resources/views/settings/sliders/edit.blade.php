@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.sliders.update', $slider->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('agentadmin.sliders.update', $slider->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
             <div class="page-header">
                 <div class="page-title">
                     <h1>

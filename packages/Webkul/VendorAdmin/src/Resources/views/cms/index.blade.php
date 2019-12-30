@@ -19,7 +19,7 @@
                     </span>
                 </div>
 
-                <a href="{{ route('admin.cms.create') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('vendoradmin.cms.create') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.cms.pages.add-title') }}
                 </a>
             </div>

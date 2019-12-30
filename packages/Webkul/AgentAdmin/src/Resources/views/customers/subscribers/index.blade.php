@@ -14,7 +14,7 @@
             </div>
 
             {{-- <div class="page-action">
-                <a href="{{ route('admin.subscribers.store') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('agentadmin.subscribers.store') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.customers.subscribers.add-title') }}
                 </a>
             </div> --}}

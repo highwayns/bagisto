@@ -88,7 +88,7 @@ class CartRuleCouponsDataGrid extends DataGrid
     {
         // $this->addMassAction([
         //     'type' => 'delete',
-        //     'action' => route('admin.catalog.attributes.massdelete'),
+        //     'action' => route('agentadmin.catalog.attributes.massdelete'),
         //     'label' => 'Delete',
         //     'method' => 'DELETE'
         // ]);

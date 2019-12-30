@@ -8,7 +8,7 @@
     <div class="content">
         {!! view_render_event('bagisto.admin.customer.edit.before', ['customer' => $customer]) !!}
 
-        <form method="POST" action="{{ route('admin.customer.update', $customer->id) }}">
+        <form method="POST" action="{{ route('agentadmin.customer.update', $customer->id) }}">
 
             <div class="page-header">
                 <div class="page-title">

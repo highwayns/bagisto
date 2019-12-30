@@ -60,7 +60,7 @@ class CustomerController extends Controller
     {
         $this->_config = request('_config');
 
-        $this->middleware('admin');
+        $this->middleware('vendoradmin');
 
         $this->customerRepository = $customerRepository;
 

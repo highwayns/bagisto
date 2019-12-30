@@ -48,7 +48,7 @@
     @parent
 
     <script type="text/x-template" id="variant-form-template">
-        <form method="POST" action="{{ route('admin.catalog.products.store') }}" data-vv-scope="add-variant-form" @submit.prevent="addVariant('add-variant-form')">
+        <form method="POST" action="{{ route('agentadmin.catalog.products.store') }}" data-vv-scope="add-variant-form" @submit.prevent="addVariant('add-variant-form')">
 
             <div class="page-content">
                 <div class="form-container">
@@ -170,7 +170,7 @@
             </td>
 
             <td class="actions">
-                <a :href="['{{ route('admin.catalog.products.index') }}/edit/' + variant.id]"><i class="icon pencil-lg-icon"></i></a>
+                <a :href="['{{ route('agentadmin.catalog.products.index') }}/edit/' + variant.id]"><i class="icon pencil-lg-icon"></i></a>
                 <i class="icon remove-icon" @click="removeVariant()"></i>
             </td>
         </tr>

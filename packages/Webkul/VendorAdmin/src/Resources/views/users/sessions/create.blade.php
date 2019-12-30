@@ -14,7 +14,7 @@
 
                 <h1>{{ __('admin::app.users.sessions.title') }}</h1>
 
-                <form method="POST" action="{{ route('admin.session.store') }}" @submit.prevent="onSubmit">
+                <form method="POST" action="{{ route('vendoradmin.session.store') }}" @submit.prevent="onSubmit">
                     @csrf
 
                     <div class="control-group" :class="[errors.has('email') ? 'has-error' : '']">
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="control-group">
-                        <a href="{{ route('admin.forget-password.create') }}">{{ __('admin::app.users.sessions.forget-password-link-title') }}</a>
+                        <a href="{{ route('vendoradmin.forget-password.create') }}">{{ __('admin::app.users.sessions.forget-password-link-title') }}</a>
                     </div>
 
                     <div class="button-group">

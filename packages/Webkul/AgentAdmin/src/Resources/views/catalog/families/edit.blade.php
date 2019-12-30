@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.catalog.families.update', $attributeFamily->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('agentadmin.catalog.families.update', $attributeFamily->id) }}" @submit.prevent="onSubmit">
 
             <div class="page-header">
                 <div class="page-title">
@@ -94,7 +94,7 @@
 @push('scripts')
 
     <script type="text/x-template" id="group-form-template">
-        <form method="POST" action="{{ route('admin.catalog.families.store') }}" data-vv-scope="add-group-form" @submit.prevent="addGroup('add-group-form')">
+        <form method="POST" action="{{ route('agentadmin.catalog.families.store') }}" data-vv-scope="add-group-form" @submit.prevent="addGroup('add-group-form')">
 
             <div class="page-content">
                 <div class="form-container">

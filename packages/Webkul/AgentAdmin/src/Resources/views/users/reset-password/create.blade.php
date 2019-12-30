@@ -25,7 +25,7 @@
 
                 <h1>{{ __('admin::app.users.reset-password.title') }}</h1>
 
-                <form method="POST" action="{{ route('admin.reset-password.store') }}" @submit.prevent="onSubmit">
+                <form method="POST" action="{{ route('agentadmin.reset-password.store') }}" @submit.prevent="onSubmit">
                     @csrf
 
                     <input type="hidden" name="token" value="{{ $token }}">
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="control-group" style="margin-bottom: 0">
-                        <a href="{{ route('admin.session.create') }}">
+                        <a href="{{ route('agentadmin.session.create') }}">
                             <i class="icon primary-back-icon"></i>
                             {{ __('admin::app.users.reset-password.back-link-title') }}
                         </a>

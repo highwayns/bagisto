@@ -48,7 +48,7 @@ class InvoiceController extends Controller
         InvoiceRepository $invoiceRepository
     )
     {
-        $this->middleware('admin');
+        $this->middleware('vendoradmin');
 
         $this->_config = request('_config');
 

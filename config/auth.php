@@ -27,6 +27,16 @@ return [
             'provider' => 'admins'
         ],
 
+        'vendoradmin' => [
+            'driver' => 'session',
+            'provider' => 'vendoradmins'
+        ],
+
+        'agentadmin' => [
+            'driver' => 'session',
+            'provider' => 'agentadmins'
+        ],
+
         'admin-api' => [
             'driver' => 'token',
             'provider' => 'admins',
@@ -42,6 +52,14 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => Webkul\User\Models\Admin::class,
+        ],
+        'vendoradmins' => [
+            'driver' => 'eloquent',
+            'model' => Webkul\Vendor\Models\VendorSource::class,
+        ],
+        'agentadmins' => [
+            'driver' => 'eloquent',
+            'model' => Webkul\Agent\Models\AgentSource::class,
         ]
     ],
 
@@ -49,6 +67,16 @@ return [
         'admins' => [
             'provider' => 'admins',
             'table' => 'admin_password_resets',
+            'expire' => 60,
+        ],
+        'vendoradmins' => [
+            'provider' => 'vendoradmins',
+            'table' => 'vendor_password_resets',
+            'expire' => 60,
+        ],
+        'agentadmins' => [
+            'provider' => 'agentadmins',
+            'table' => 'agent_password_resets',
             'expire' => 60,
         ],
         'customers' => [

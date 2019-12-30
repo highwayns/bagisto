@@ -20,25 +20,25 @@
 
             <div class="page-action">
                 @if ($order->canCancel())
-                    <a href="{{ route('admin.sales.orders.cancel', $order->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('admin::app.sales.orders.cancel-confirm-msg') }}'">
+                    <a href="{{ route('agentadmin.sales.orders.cancel', $order->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('admin::app.sales.orders.cancel-confirm-msg') }}'">
                         {{ __('admin::app.sales.orders.cancel-btn-title') }}
                     </a>
                 @endif
 
                 @if ($order->canInvoice())
-                    <a href="{{ route('admin.sales.invoices.create', $order->id) }}" class="btn btn-lg btn-primary">
+                    <a href="{{ route('agentadmin.sales.invoices.create', $order->id) }}" class="btn btn-lg btn-primary">
                         {{ __('admin::app.sales.orders.invoice-btn-title') }}
                     </a>
                 @endif
 
                 @if ($order->canRefund())
-                    <a href="{{ route('admin.sales.refunds.create', $order->id) }}" class="btn btn-lg btn-primary">
+                    <a href="{{ route('agentadmin.sales.refunds.create', $order->id) }}" class="btn btn-lg btn-primary">
                         {{ __('admin::app.sales.orders.refund-btn-title') }}
                     </a>
                 @endif
 
                 @if ($order->canShip())
-                    <a href="{{ route('admin.sales.shipments.create', $order->id) }}" class="btn btn-lg btn-primary">
+                    <a href="{{ route('agentadmin.sales.shipments.create', $order->id) }}" class="btn btn-lg btn-primary">
                         {{ __('admin::app.sales.orders.shipment-btn-title') }}
                     </a>
                 @endif
@@ -402,7 +402,7 @@
                                         <td>{{ $invoice->status_label }}</td>
                                         <td>{{ core()->formatBasePrice($invoice->base_grand_total) }}</td>
                                         <td class="action">
-                                            <a href="{{ route('admin.sales.invoices.view', $invoice->id) }}">
+                                            <a href="{{ route('agentadmin.sales.invoices.view', $invoice->id) }}">
                                                 <i class="icon eye-icon"></i>
                                             </a>
                                         </td>
@@ -447,7 +447,7 @@
                                             <td>{{ $shipment->address->name }}</td>
                                             <td>{{ $shipment->total_qty }}</td>
                                             <td class="action">
-                                                <a href="{{ route('admin.sales.shipments.view', $shipment->id) }}">
+                                                <a href="{{ route('agentadmin.sales.shipments.view', $shipment->id) }}">
                                                     <i class="icon eye-icon"></i>
                                                 </a>
                                             </td>
@@ -492,7 +492,7 @@
                                         <td>{{ __('admin::app.sales.refunds.refunded') }}</td>
                                         <td>{{ core()->formatBasePrice($refund->base_grand_total) }}</td>
                                         <td class="action">
-                                            <a href="{{ route('admin.sales.refunds.view', $refund->id) }}">
+                                            <a href="{{ route('agentadmin.sales.refunds.view', $refund->id) }}">
                                                 <i class="icon eye-icon"></i>
                                             </a>
                                         </td>

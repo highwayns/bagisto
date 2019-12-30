@@ -358,7 +358,7 @@
 
                     formData.append(type, this[type]);
         
-                    this.$http.post("{{ route('admin.catalog.products.upload_link', $product->id) }}", formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                    this.$http.post("{{ route('agentadmin.catalog.products.upload_link', $product->id) }}", formData, { headers: { 'Content-Type': 'multipart/form-data' } })
                         .then(function(response) {
                             Object.assign(this_this.link, response.data);
                         })
@@ -445,7 +445,7 @@
 
                     formData.append(type, this.file);
         
-                    this.$http.post("{{ route('admin.catalog.products.upload_sample', $product->id) }}", formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                    this.$http.post("{{ route('agentadmin.catalog.products.upload_sample', $product->id) }}", formData, { headers: { 'Content-Type': 'multipart/form-data' } })
                         .then(function(response) {
                             Object.assign(this_this.sample, response.data);
                         })

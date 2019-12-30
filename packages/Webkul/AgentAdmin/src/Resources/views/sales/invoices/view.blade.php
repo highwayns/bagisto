@@ -19,7 +19,7 @@
             </div>
 
             <div class="page-action">
-                <a href="{{ route('admin.sales.invoices.print', $invoice->id) }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('agentadmin.sales.invoices.print', $invoice->id) }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.sales.invoices.print') }}
                 </a>
             </div>
@@ -43,7 +43,7 @@
                                     </span>
 
                                     <span class="value">
-                                        <a href="{{ route('admin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
+                                        <a href="{{ route('agentadmin.sales.orders.view', $order->id) }}">#{{ $order->increment_id }}</a>
                                     </span>
                                 </div>
 

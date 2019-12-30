@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('agentadmin.users.update', $user->id) }}" @submit.prevent="onSubmit">
             <div class="page-header">
                 <div class="page-title">
                     <h1>

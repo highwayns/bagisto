@@ -14,6 +14,10 @@ class VendorTableSeeder extends Seeder
         DB::table('vendor_sources')->insert([
             'id' => 1,
             'name' => 'wp',
+            'email' => 'wp@example.com',
+            'password' => bcrypt('admin123'),
+            'status' => 1,
+            'role_id' => 1,
             'name_kana' => 'ou hou',
             'creditcard_main_apikey' => '123456789',
             'creditcard_denki_apikey' => '1234567899',

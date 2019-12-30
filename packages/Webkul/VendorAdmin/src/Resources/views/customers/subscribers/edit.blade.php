@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="content">
-        <form method="POST" action="{{ route('admin.customers.subscribers.update', $subscriber->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('vendoradmin.customers.subscribers.update', $subscriber->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
             <div class="page-header">
                 <div class="page-title">
                     <h1>

@@ -11,6 +11,7 @@ use Webkul\Customer\Database\Seeders\DatabaseSeeder as CustomerSeeder;
 use Webkul\Inventory\Database\Seeders\DatabaseSeeder as InventorySeeder;
 use Webkul\CMS\Database\Seeders\DatabaseSeeder as CMSSeeder;
 use Webkul\Vendor\Database\Seeders\DatabaseSeeder as VendorSeeder;
+use Webkul\Agent\Database\Seeders\DatabaseSeeder as AgentSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomerSeeder::class);
         $this->call(CMSSeeder::class);
         $this->call(VendorSeeder::class);
+        $this->call(AgentSeeder::class);
     }
 }

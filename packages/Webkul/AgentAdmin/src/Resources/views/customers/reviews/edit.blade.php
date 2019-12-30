@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.customer.review.update', $review->id) }}">
+        <form method="POST" action="{{ route('agentadmin.customer.review.update', $review->id) }}">
 
             <div class="page-header">
                 <div class="page-title">

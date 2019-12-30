@@ -12,7 +12,7 @@
     @push('scripts')
         <script type="text/x-template" id="catalog-rule-form-template">
             <div>
-                <form method="POST" action="{{ route('admin.catalog-rule.update', $catalog_rule[5]->id) }}" @submit.prevent="onSubmit">
+                <form method="POST" action="{{ route('agentadmin.catalog-rule.update', $catalog_rule[5]->id) }}" @submit.prevent="onSubmit">
                     @csrf
 
                     <div class="page-header">

@@ -25,7 +25,7 @@
                     {{ __('admin::app.error.500.message') }}
                 </div>
 
-                <a href="{{ route('admin.dashboard.index') }}">
+                <a href="{{ route('vendoradmin.dashboard.index') }}">
                     {{ __('admin::app.error.go-to-home') }}
                 </a>
 

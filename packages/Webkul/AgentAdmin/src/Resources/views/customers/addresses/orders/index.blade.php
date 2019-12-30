@@ -21,9 +21,9 @@
 
             <div class="tabs">
                 <ul>
-                    <li><a href="{{ route('admin.address.addresses.index', ['id' => $customer->id]) }}">{{ __('address::app.admin.addresses.address-list') }}</a></li>
+                    <li><a href="{{ route('agentadmin.address.addresses.index', ['id' => $customer->id]) }}">{{ __('address::app.admin.addresses.address-list') }}</a></li>
 
-                    <li class="active"><a href="{{ route('admin.address.orders.index', ['id' => $customer->id]) }}">{{ __('address::app.admin.addresses.order-list') }}</a></li>
+                    <li class="active"><a href="{{ route('agentadmin.address.orders.index', ['id' => $customer->id]) }}">{{ __('address::app.admin.addresses.order-list') }}</a></li>
                 </ul>
             </div>
 

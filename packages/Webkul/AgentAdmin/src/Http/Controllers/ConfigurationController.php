@@ -43,7 +43,7 @@ class ConfigurationController extends Controller
      */
     public function __construct(CoreConfigRepository $coreConfigRepository)
     {
-        $this->middleware('admin');
+        $this->middleware('agentadmin');
 
         $this->coreConfigRepository = $coreConfigRepository;
 
@@ -81,7 +81,7 @@ class ConfigurationController extends Controller
         $slugs = $this->getDefaultConfigSlugs();
 
         if (count($slugs)) {
-            return redirect()->route('admin.configuration.index', $slugs);
+            return redirect()->route('agentadmin.configuration.index', $slugs);
         }
 
         return view($this->_config['view'], ['config' => $this->configTree]);

@@ -161,14 +161,14 @@ class CustomerDataGrid extends DataGrid
         $this->addMassAction([
             'type' => 'delete',
             'label' => 'Delete',
-            'action' => route('admin.customer.mass-delete'),
+            'action' => route('vendoradmin.customer.mass-delete'),
             'method' => 'PUT',
         ]);
 
         $this->addMassAction([
             'type' => 'update',
             'label' => 'Update Status',
-            'action' => route('admin.customer.mass-update'),
+            'action' => route('vendoradmin.customer.mass-update'),
             'method' => 'PUT',
             'options' => [
                 'Active' => 1,

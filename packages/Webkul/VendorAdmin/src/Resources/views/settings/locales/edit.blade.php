@@ -7,7 +7,7 @@
 @section('content')
     <div class="content">
 
-        <form method="POST" action="{{ route('admin.locales.update', $locale->id) }}" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('vendoradmin.locales.update', $locale->id) }}" @submit.prevent="onSubmit">
             <div class="page-header">
                 <div class="page-title">
                     <h1>

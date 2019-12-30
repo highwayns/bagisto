@@ -7,7 +7,7 @@
 @section('content')
     <div class="content">
 
-        <form method="POST" action="{{ route('admin.catalog.categories.store') }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('agentadmin.catalog.categories.store') }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
 
             <div class="page-header">
                 <div class="page-title">

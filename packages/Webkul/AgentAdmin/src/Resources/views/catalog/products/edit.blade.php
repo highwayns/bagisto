@@ -181,7 +181,7 @@
                 $('#channel-switcher').val()
                 var query = '?channel=' + $('#channel-switcher').val() + '&locale=' + $('#locale-switcher').val();
 
-                window.location.href = "{{ route('admin.catalog.products.edit', $product->id)  }}" + query;
+                window.location.href = "{{ route('agentadmin.catalog.products.edit', $product->id)  }}" + query;
             })
 
             tinymce.init({

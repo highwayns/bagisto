@@ -19,7 +19,7 @@
                     </span>
                 </div>
 
-                <a href="{{ route('admin.customer.create') }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('vendoradmin.customer.create') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.customers.customers.add-title') }}
                 </a>
             </div>

@@ -12,7 +12,7 @@
             </div>
 
             <div class="page-action">
-                <a href="{{ route('admin.customer.addresses.create', ['id' => $customer->id]) }}" class="btn btn-lg btn-primary">
+                <a href="{{ route('vendoradmin.customer.addresses.create', ['id' => $customer->id]) }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.customers.addresses.create-btn-title') }}
                 </a>
             </div>

@@ -262,7 +262,7 @@
                 ?>
 
                 @if ($result)
-                    <a href="{{ route('admin.configuration.download', [request()->route('slug'), request()->route('slug2'), $path]) }}">
+                    <a href="{{ route('agentadmin.configuration.download', [request()->route('slug'), request()->route('slug2'), $path]) }}">
                         <i class="icon sort-down-icon download"></i>
                     </a>
                 @endif

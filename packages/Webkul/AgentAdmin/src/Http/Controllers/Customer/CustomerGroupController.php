@@ -37,7 +37,7 @@ class CustomerGroupController extends Controller
     {
         $this->_config = request('_config');
 
-        $this->middleware('admin');
+        $this->middleware('agentadmin');
 
         $this->customerGroupRepository = $customerGroupRepository;
     }

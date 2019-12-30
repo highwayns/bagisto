@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content">
-        <form method="POST" action="{{ route('admin.catalog.attributes.update', $attribute->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('vendoradmin.catalog.attributes.update', $attribute->id) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
 
             <div class="page-header">
                 <div class="page-title">
