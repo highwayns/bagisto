@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.promotion.catalog-rule') }}
@@ -28,7 +28,7 @@
         </div>
 
         <div class="page-content">
-            @inject('catalogRuleGrid','Webkul\Admin\DataGrids\CatalogRuleDataGrid')
+            @inject('catalogRuleGrid','Webkul\VendorAdmin\DataGrids\CatalogRuleDataGrid')
             {!! $catalogRuleGrid->render() !!}
         </div>
     </div>

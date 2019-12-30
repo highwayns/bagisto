@@ -3,15 +3,15 @@
 return [
     [
         'key' => 'general',
-        'name' => 'admin::app.admin.system.general',
+        'name' => 'vendoradmin::app.admin.system.general',
         'sort' => 1,
     ], [
         'key' => 'general.general',
-        'name' => 'admin::app.admin.system.general',
+        'name' => 'vendoradmin::app.admin.system.general',
         'sort' => 1,
     ], [
         'key' => 'general.general.locale_options',
-        'name' => 'admin::app.admin.system.locale-options',
+        'name' => 'vendoradmin::app.admin.system.locale-options',
         'sort' => 1,
         'fields' => [
             [
@@ -32,11 +32,11 @@ return [
         ]
     ], [
         'key' => 'general.content',
-        'name' => 'admin::app.admin.system.content',
+        'name' => 'vendoradmin::app.admin.system.content',
         'sort' => 2,
     ], [
         'key' => 'general.content.footer',
-        'name' => 'admin::app.admin.system.footer',
+        'name' => 'vendoradmin::app.admin.system.footer',
         'sort' => 1,
         'fields' => [
             [
@@ -64,11 +64,11 @@ return [
         ]
     ], [
         'key' => 'general.design',
-        'name' => 'admin::app.admin.system.design',
+        'name' => 'vendoradmin::app.admin.system.design',
         'sort' => 3,
     ], [
         'key' => 'general.design.admin_logo',
-        'name' => 'admin::app.admin.system.admin-logo',
+        'name' => 'vendoradmin::app.admin.system.admin-logo',
         'sort' => 1,
         'fields' => [
             [
@@ -80,15 +80,15 @@ return [
         ]
     ], [
         'key' => 'catalog',
-        'name' => 'admin::app.admin.system.catalog',
+        'name' => 'vendoradmin::app.admin.system.catalog',
         'sort' => 2
     ], [
         'key' => 'catalog.products',
-        'name' => 'admin::app.admin.system.products',
+        'name' => 'vendoradmin::app.admin.system.products',
         'sort' => 2
     ], [
         'key' => 'catalog.products.review',
-        'name' => 'admin::app.admin.system.review',
+        'name' => 'vendoradmin::app.admin.system.review',
         'sort' => 1,
         'fields' => [
             [
@@ -99,11 +99,11 @@ return [
         ]
     ], [
         'key' => 'catalog.inventory',
-        'name' => 'admin::app.admin.system.inventory',
+        'name' => 'vendoradmin::app.admin.system.inventory',
         'sort' => 1,
     ], [
         'key' => 'catalog.inventory.stock_options',
-        'name' => 'admin::app.admin.system.stock-options',
+        'name' => 'vendoradmin::app.admin.system.stock-options',
         'sort' => 1,
         'fields' => [
             [
@@ -115,15 +115,15 @@ return [
         ]
     ], [
         'key' => 'customer',
-        'name' => 'admin::app.admin.system.customer',
+        'name' => 'vendoradmin::app.admin.system.customer',
         'sort' => 3,
     ], [
         'key' => 'customer.settings',
-        'name' => 'admin::app.admin.system.settings',
+        'name' => 'vendoradmin::app.admin.system.settings',
         'sort' => 1,
     ], [
         'key' => 'customer.settings.address',
-        'name' => 'admin::app.admin.system.address',
+        'name' => 'vendoradmin::app.admin.system.address',
         'sort' => 1,
         'fields' => [
             [
@@ -136,7 +136,7 @@ return [
         ]
     ], [
         'key' => 'customer.settings.newsletter',
-        'name' => 'admin::app.admin.system.newsletter',
+        'name' => 'vendoradmin::app.admin.system.newsletter',
         'sort' => 2,
         'fields' => [
             [
@@ -147,7 +147,7 @@ return [
         ],
     ], [
         'key' => 'customer.settings.email',
-        'name' => 'admin::app.admin.system.email',
+        'name' => 'vendoradmin::app.admin.system.email',
         'sort' => 3,
         'fields' => [
             [

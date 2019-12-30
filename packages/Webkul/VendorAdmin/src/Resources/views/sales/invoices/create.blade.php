@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('vendoradmin::layouts.master')
 
 @section('page_title')
     {{ __('admin::app.sales.invoices.add-title') }}
@@ -120,7 +120,7 @@
 
                                 <div class="section-content">
 
-                                    @include ('admin::sales.address', ['address' => $order->billing_address])
+                                    '@include ('vendoradmin::sales.address', ['address' => $order->billing_address])
 
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
 
                                     <div class="section-content">
 
-                                        @include ('admin::sales.address', ['address' => $order->shipping_address])
+                                        '@include ('vendoradmin::sales.address', ['address' => $order->shipping_address])
 
                                     </div>
                                 </div>

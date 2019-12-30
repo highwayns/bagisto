@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.customers.groups.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('customerGroup','Webkul\Admin\DataGrids\CustomerGroupDataGrid')
+            @inject('customerGroup','Webkul\VendorAdmin\DataGrids\CustomerGroupDataGrid')
             {!! $customerGroup->render() !!}
         </div>
     </div>

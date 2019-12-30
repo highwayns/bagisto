@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.promotion.cart-rule') }}
@@ -20,7 +20,7 @@
         </div>
 
         <div class="page-content">
-            @inject('cartRuleGrid','Webkul\Admin\DataGrids\CartRuleDataGrid')
+            @inject('cartRuleGrid','Webkul\VendorAdmin\DataGrids\CartRuleDataGrid')
             {!! $cartRuleGrid->render() !!}
         </div>
     </div>

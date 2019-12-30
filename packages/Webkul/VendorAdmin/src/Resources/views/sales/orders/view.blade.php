@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('vendoradmin::layouts.master')
 
 @section('page_title')
     {{ __('admin::app.sales.orders.view-title', ['order_id' => $order->increment_id]) }}
@@ -147,7 +147,7 @@
 
                                     <div class="section-content">
 
-                                        @include ('admin::sales.address', ['address' => $order->billing_address])
+                                        '@include ('vendoradmin::sales.address', ['address' => $order->billing_address])
 
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
 
                                         <div class="section-content">
 
-                                            @include ('admin::sales.address', ['address' => $order->shipping_address])
+                                            '@include ('vendoradmin::sales.address', ['address' => $order->shipping_address])
 
                                         </div>
                                     </div>

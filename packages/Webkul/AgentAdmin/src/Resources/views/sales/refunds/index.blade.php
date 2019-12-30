@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.sales.refunds.title') }}
@@ -22,7 +22,7 @@
         </div>
 
         <div class="page-content">
-            @inject('refundGrid', 'Webkul\Admin\DataGrids\OrderRefundDataGrid')
+            @inject('refundGrid', 'Webkul\AgentAdmin\DataGrids\OrderRefundDataGrid')
             
             {!! $refundGrid->render() !!}
         </div>
@@ -38,5 +38,5 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $refundGrid])
+    @include('agentadmin::export.export', ['gridName' => $refundGrid])
 @endpush

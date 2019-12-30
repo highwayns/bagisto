@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.promotion.edit-catalog-rule') }}

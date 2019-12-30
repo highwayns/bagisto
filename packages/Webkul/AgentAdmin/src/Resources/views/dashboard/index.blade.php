@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('agentadmin::layouts.master')
 
 @section('page_title')
     {{ __('admin::app.dashboard.title') }}

@@ -1,4 +1,4 @@
-@extends('admin::layouts.anonymous-master')
+@extends('vendoradmin::layouts.anonymous-master')
 
 @section('page_title')
     {{ __('admin::app.users.reset-password.title') }}

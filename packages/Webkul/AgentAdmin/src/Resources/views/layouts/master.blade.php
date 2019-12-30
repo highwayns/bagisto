@@ -28,14 +28,14 @@
 
             {!! view_render_event('bagisto.admin.layout.nav-top.before') !!}
 
-            @include ('admin::layouts.nav-top')
+            '@include ('agentadmin::layouts.nav-top')
 
             {!! view_render_event('bagisto.admin.layout.nav-top.after') !!}
 
 
             {!! view_render_event('bagisto.admin.layout.nav-left.before') !!}
 
-            @include ('admin::layouts.nav-left')
+            '@include ('agentadmin::layouts.nav-left')
 
             {!! view_render_event('bagisto.admin.layout.nav-left.after') !!}
 

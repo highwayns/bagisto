@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.catalog.products.title') }}
@@ -28,7 +28,7 @@
         {!! view_render_event('bagisto.admin.catalog.products.list.before') !!}
 
         <div class="page-content">
-            @inject('products', 'Webkul\Admin\DataGrids\ProductDataGrid')
+            @inject('products', 'Webkul\AgentAdmin\DataGrids\ProductDataGrid')
             {!! $products->render() !!}
         </div>
 
@@ -45,5 +45,5 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $products])
+    @include('agentadmin::export.export', ['gridName' => $products])
 @endpush

@@ -1,13 +1,13 @@
-@extends('admin::layouts.master')
+@extends('agentadmin::layouts.master')
 
 @section('content-wrapper')
     <div class="inner-section">
     
-        @include ('admin::layouts.nav-aside')
+        @include ('vendoradmin::layouts.nav-aside')
 
         <div class="content-wrapper">
 
-            @include ('admin::layouts.tabs')
+            @include ('vendoradmin::layouts.tabs')
 
             @yield('content')
 

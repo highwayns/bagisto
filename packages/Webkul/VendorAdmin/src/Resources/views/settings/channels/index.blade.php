@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.channels.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('channels','Webkul\Admin\DataGrids\ChannelDataGrid')
+            @inject('channels','Webkul\VendorAdmin\DataGrids\ChannelDataGrid')
             {!! $channels->render() !!}
         </div>
     </div>

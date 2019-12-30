@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.tax-rates.add-title') }}
@@ -45,7 +45,7 @@
                 <span class="control-error" v-if="errors.has('identifier')">@{{ errors.first('identifier') }}</span>
             </div>
 
-            @include ('admin::customers.country-state', ['countryCode' => old('country'), 'stateCode' => old('state')])
+            '@include ('vendoradmin::customers.country-state', ['countryCode' => old('country'), 'stateCode' => old('state')])
 
             <div class="control-group">
                 <span class="checkbox">

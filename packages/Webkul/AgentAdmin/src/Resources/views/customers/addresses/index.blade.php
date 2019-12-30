@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.customers.addresses.title', ['customer_name' => $customer->first_name . ' ' . $customer->last_name]) }}

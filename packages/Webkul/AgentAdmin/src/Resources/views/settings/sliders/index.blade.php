@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.sliders.title') }}
@@ -21,7 +21,7 @@
         </div>
 
         <div class="page-content">
-            @inject('sliders','Webkul\Admin\DataGrids\SliderDataGrid')
+            @inject('sliders','Webkul\AgentAdmin\DataGrids\SliderDataGrid')
             {!! $sliders->render() !!}
         </div>
     </div>

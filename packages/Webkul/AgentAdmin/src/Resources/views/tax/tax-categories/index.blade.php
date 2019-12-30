@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.tax-categories.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('taxCategories','Webkul\Admin\DataGrids\TaxCategoryDataGrid')
+            @inject('taxCategories','Webkul\AgentAdmin\DataGrids\TaxCategoryDataGrid')
             {!! $taxCategories->render() !!}
         </div>
     </div>

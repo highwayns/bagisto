@@ -1,4 +1,4 @@
-@extends(auth()->guard('admin')->check() ? 'admin::layouts.master' : 'shop::layouts.master')
+@extends(auth()->guard('vendoradmin')->check() ? 'admin::layouts.master' : 'shop::layouts.master')
 
 @section('page_title')
     {{ __('admin::app.error.500.page-title') }}

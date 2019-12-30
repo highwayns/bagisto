@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.currencies.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('currencies','Webkul\Admin\DataGrids\CurrencyDataGrid')
+            @inject('currencies','Webkul\AgentAdmin\DataGrids\CurrencyDataGrid')
             {!! $currencies->render() !!}
         </div>
     </div>

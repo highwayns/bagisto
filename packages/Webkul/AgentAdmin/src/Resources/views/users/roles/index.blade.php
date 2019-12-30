@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.users.roles.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('roles','Webkul\Admin\DataGrids\RolesDataGrid')
+            @inject('roles','Webkul\AgentAdmin\DataGrids\RolesDataGrid')
             {!! $roles->render() !!}
         </div>
     </div>

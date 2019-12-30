@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.cms.pages.title') }}
@@ -26,7 +26,7 @@
         </div>
 
         <div class="page-content">
-            @inject('cmsGrid', 'Webkul\Admin\DataGrids\CMSPageDataGrid')
+            @inject('cmsGrid', 'Webkul\AgentAdmin\DataGrids\CMSPageDataGrid')
 
             {!! $cmsGrid->render() !!}
         </div>
@@ -41,6 +41,6 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $cmsGrid])
+    @include('agentadmin::export.export', ['gridName' => $cmsGrid])
 @endpush
 

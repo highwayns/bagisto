@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.sales.shipments.title') }}
@@ -22,7 +22,7 @@
         </div>
 
         <div class="page-content">
-            @inject('orderShipmentsGrid', 'Webkul\Admin\DataGrids\OrderShipmentsDataGrid')
+            @inject('orderShipmentsGrid', 'Webkul\AgentAdmin\DataGrids\OrderShipmentsDataGrid')
             {!! $orderShipmentsGrid->render() !!}
         </div>
     </div>
@@ -37,5 +37,5 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $orderShipmentsGrid])
+    @include('agentadmin::export.export', ['gridName' => $orderShipmentsGrid])
 @endpush

@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.inventory_sources.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('inventory_sources','Webkul\Admin\DataGrids\InventorySourcesDataGrid')
+            @inject('inventory_sources','Webkul\AgentAdmin\DataGrids\InventorySourcesDataGrid')
             {!! $inventory_sources->render() !!}
         </div>
     </div>

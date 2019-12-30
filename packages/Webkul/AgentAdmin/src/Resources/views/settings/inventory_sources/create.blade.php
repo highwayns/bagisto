@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.inventory_sources.add-title') }}
@@ -109,7 +109,7 @@
                     <accordian :title="'{{ __('admin::app.settings.inventory_sources.address') }}'" :active="true">
                         <div slot="body">
 
-                            @include ('admin::customers.country-state', ['countryCode' => old('country'), 'stateCode' => old('state')])
+                            '@include ('agentadmin::customers.country-state', ['countryCode' => old('country'), 'stateCode' => old('state')])
 
                             <div class="control-group" :class="[errors.has('city') ? 'has-error' : '']">
                                 <label for="city" class="required">{{ __('admin::app.settings.inventory_sources.city') }}</label>

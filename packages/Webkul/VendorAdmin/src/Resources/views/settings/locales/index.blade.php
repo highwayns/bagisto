@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.locales.title') }}
@@ -20,7 +20,7 @@
 
         <div class="page-content">
 
-            @inject('locales','Webkul\Admin\DataGrids\LocalesDataGrid')
+            @inject('locales','Webkul\VendorAdmin\DataGrids\LocalesDataGrid')
             {!! $locales->render() !!}
         </div>
     </div>

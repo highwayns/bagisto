@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.cms.pages.title') }}
@@ -26,7 +26,7 @@
         </div>
 
         <div class="page-content">
-            @inject('cmsGrid', 'Webkul\Admin\DataGrids\CMSPageDataGrid')
+            @inject('cmsGrid', 'Webkul\VendorAdmin\DataGrids\CMSPageDataGrid')
 
             {!! $cmsGrid->render() !!}
         </div>
@@ -41,6 +41,6 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $cmsGrid])
+    @include('vendoradmin::export.export', ['gridName' => $cmsGrid])
 @endpush
 

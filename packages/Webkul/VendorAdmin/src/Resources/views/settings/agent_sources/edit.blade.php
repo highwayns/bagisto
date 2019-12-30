@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.agent_sources.edit-title') }}
@@ -12,7 +12,7 @@
                     <h1>
                         <i class="icon angle-left-icon back-link" onclick="history.length > 1 ? history.go(-1) : window.location = '{{ url('/admin/dashboard') }}';"></i>
 
-                        {{ __('admin::app.settings.agent_sources.edit-user-title') }}
+                        {{ __('admin::app.settings.agent_sources.edit-title') }}
                     </h1>
                 </div>
 

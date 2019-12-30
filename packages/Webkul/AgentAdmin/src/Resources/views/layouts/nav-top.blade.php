@@ -20,11 +20,11 @@
                 <div class="dropdown-toggle">
                     <div style="display: inline-block; vertical-align: middle;">
                         <span class="name">
-                            {{ auth()->guard('admin')->user()->name }}
+                            {{ auth()->guard('agentadmin')->user()->name }}
                         </span>
 
                         <span class="role">
-                            {{ auth()->guard('admin')->user()->role['name'] }}
+                            {{ auth()->guard('agentadmin')->user()->role['name'] }}
                         </span>
                     </div>
                     <i class="icon arrow-down-icon active"></i>

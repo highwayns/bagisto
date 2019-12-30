@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.customers.reviews.title') }}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="page-content">
-            @inject('review','Webkul\Admin\DataGrids\CustomerReviewDataGrid')
+            @inject('review','Webkul\AgentAdmin\DataGrids\CustomerReviewDataGrid')
             {!! $review->render() !!}
         </div>
     </div>

@@ -35,6 +35,7 @@ class CreateAgentSourcesTable extends Migration
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'))->comment('更新日時');
             $table->integer('updated_user_id')->comment('更新ユーザーID');
             $table->boolean('del_flg')->default(false);
+            $table->rememberToken();
         });
     }
 

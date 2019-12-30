@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.customers.subscribers.title') }}
@@ -21,7 +21,7 @@
         </div>
 
         <div class="page-content">
-            @inject('subscribers','Webkul\Admin\DataGrids\NewsLetterDataGrid')
+            @inject('subscribers','Webkul\VendorAdmin\DataGrids\NewsLetterDataGrid')
             {!! $subscribers->render() !!}
         </div>
     </div>

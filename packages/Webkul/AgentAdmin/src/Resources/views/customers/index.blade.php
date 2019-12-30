@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.customers.customers.title') }}
@@ -26,7 +26,7 @@
         </div>
 
         <div class="page-content">
-            @inject('customerGrid','Webkul\Admin\DataGrids\CustomerDataGrid')
+            @inject('customerGrid','Webkul\AgentAdmin\DataGrids\CustomerDataGrid')
 
             {!! $customerGrid->render() !!}
         </div>
@@ -42,6 +42,6 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $customerGrid])
+    @include('agentadmin::export.export', ['gridName' => $customerGrid])
 @endpush
 

@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.configuration.title') }}
@@ -63,7 +63,7 @@
 
                                     @foreach ($item['fields'] as $field)
 
-                                        @include ('admin::configuration.field-type', ['field' => $field])
+                                        '@include ('vendoradmin::configuration.field-type', ['field' => $field])
 
                                     @endforeach
 

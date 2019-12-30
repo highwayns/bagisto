@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('agentadmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.tax-rates.title') }}
@@ -32,7 +32,7 @@
         </div>
 
         <div class="page-content">
-            @inject('taxRateGrid', 'Webkul\Admin\DataGrids\TaxRateDataGrid')
+            @inject('taxRateGrid', 'Webkul\AgentAdmin\DataGrids\TaxRateDataGrid')
             {!! $taxRateGrid->render() !!}
         </div>
     </div>
@@ -69,5 +69,5 @@
 @endsection
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $taxRateGrid])
+    @include('agentadmin::export.export', ['gridName' => $taxRateGrid])
 @endpush

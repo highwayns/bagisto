@@ -3,15 +3,15 @@
 return [
     [
         'key' => 'general',
-        'name' => 'admin::app.admin.system.general',
+        'name' => 'agentadmin::app.admin.system.general',
         'sort' => 1,
     ], [
         'key' => 'general.general',
-        'name' => 'admin::app.admin.system.general',
+        'name' => 'agentadmin::app.admin.system.general',
         'sort' => 1,
     ], [
         'key' => 'general.general.locale_options',
-        'name' => 'admin::app.admin.system.locale-options',
+        'name' => 'agentadmin::app.admin.system.locale-options',
         'sort' => 1,
         'fields' => [
             [
@@ -32,11 +32,11 @@ return [
         ]
     ], [
         'key' => 'general.content',
-        'name' => 'admin::app.admin.system.content',
+        'name' => 'agentadmin::app.admin.system.content',
         'sort' => 2,
     ], [
         'key' => 'general.content.footer',
-        'name' => 'admin::app.admin.system.footer',
+        'name' => 'agentadmin::app.admin.system.footer',
         'sort' => 1,
         'fields' => [
             [
@@ -64,11 +64,11 @@ return [
         ]
     ], [
         'key' => 'general.design',
-        'name' => 'admin::app.admin.system.design',
+        'name' => 'agentadmin::app.admin.system.design',
         'sort' => 3,
     ], [
         'key' => 'general.design.admin_logo',
-        'name' => 'admin::app.admin.system.admin-logo',
+        'name' => 'agentadmin::app.admin.system.admin-logo',
         'sort' => 1,
         'fields' => [
             [
@@ -80,15 +80,15 @@ return [
         ]
     ], [
         'key' => 'catalog',
-        'name' => 'admin::app.admin.system.catalog',
+        'name' => 'agentadmin::app.admin.system.catalog',
         'sort' => 2
     ], [
         'key' => 'catalog.products',
-        'name' => 'admin::app.admin.system.products',
+        'name' => 'agentadmin::app.admin.system.products',
         'sort' => 2
     ], [
         'key' => 'catalog.products.review',
-        'name' => 'admin::app.admin.system.review',
+        'name' => 'agentadmin::app.admin.system.review',
         'sort' => 1,
         'fields' => [
             [
@@ -99,11 +99,11 @@ return [
         ]
     ], [
         'key' => 'catalog.inventory',
-        'name' => 'admin::app.admin.system.inventory',
+        'name' => 'agentadmin::app.admin.system.inventory',
         'sort' => 1,
     ], [
         'key' => 'catalog.inventory.stock_options',
-        'name' => 'admin::app.admin.system.stock-options',
+        'name' => 'agentadmin::app.admin.system.stock-options',
         'sort' => 1,
         'fields' => [
             [
@@ -115,15 +115,15 @@ return [
         ]
     ], [
         'key' => 'customer',
-        'name' => 'admin::app.admin.system.customer',
+        'name' => 'agentadmin::app.admin.system.customer',
         'sort' => 3,
     ], [
         'key' => 'customer.settings',
-        'name' => 'admin::app.admin.system.settings',
+        'name' => 'agentadmin::app.admin.system.settings',
         'sort' => 1,
     ], [
         'key' => 'customer.settings.address',
-        'name' => 'admin::app.admin.system.address',
+        'name' => 'agentadmin::app.admin.system.address',
         'sort' => 1,
         'fields' => [
             [
@@ -136,7 +136,7 @@ return [
         ]
     ], [
         'key' => 'customer.settings.newsletter',
-        'name' => 'admin::app.admin.system.newsletter',
+        'name' => 'agentadmin::app.admin.system.newsletter',
         'sort' => 2,
         'fields' => [
             [
@@ -147,7 +147,7 @@ return [
         ],
     ], [
         'key' => 'customer.settings.email',
-        'name' => 'admin::app.admin.system.email',
+        'name' => 'agentadmin::app.admin.system.email',
         'sort' => 3,
         'fields' => [
             [

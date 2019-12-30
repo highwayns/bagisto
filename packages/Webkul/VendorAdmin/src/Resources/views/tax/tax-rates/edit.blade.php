@@ -1,4 +1,4 @@
-@extends('admin::layouts.content')
+@extends('vendoradmin::layouts.content')
 
 @section('page_title')
     {{ __('admin::app.settings.tax-rates.edit-title') }}
@@ -36,7 +36,7 @@
                         <span class="control-error" v-if="errors.has('identifier')">@{{ errors.first('identifier') }}</span>
                     </div>
 
-                    @include ('admin::customers.country-state', ['countryCode' => old('country') ?? $taxRate->country, 'stateCode' => old('state') ?? $taxRate->state])
+                    '@include ('vendoradmin::customers.country-state', ['countryCode' => old('country') ?? $taxRate->country, 'stateCode' => old('state') ?? $taxRate->state])
 
                     @if ($taxRate->is_zip)
                         <input type="hidden" id="is_zip" name="is_zip" value="{{ $taxRate->is_zip }}">
