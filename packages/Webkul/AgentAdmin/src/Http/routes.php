@@ -380,6 +380,29 @@ Route::group(['middleware' => ['web']], function () {
             });
 
 
+            // agent Role Routes
+            Route::get('/roles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
+                'view' => 'agentadmin::users.roles.index'
+            ])->name('agentadmin.roles.index');
+
+            Route::get('/roles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
+                'view' => 'agentadmin::users.roles.create'
+            ])->name('agentadmin.roles.create');
+
+            Route::post('/roles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
+                'redirect' => 'agentadmin.roles.index'
+            ])->name('agentadmin.roles.store');
+
+            Route::get('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
+                'view' => 'agentadmin::users.roles.edit'
+            ])->name('agentadmin.roles.edit');
+
+            Route::put('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
+                'redirect' => 'agentadmin.roles.index'
+            ])->name('agentadmin.roles.update');
+
+            Route::post('/roles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('agentadmin.roles.delete');
+
             // Locale Routes
             Route::get('/locales', 'Webkul\Core\Http\Controllers\LocaleController@index')->defaults('_config', [
                 'view' => 'agentadmin::settings.locales.index'

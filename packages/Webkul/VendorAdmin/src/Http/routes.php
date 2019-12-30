@@ -380,6 +380,29 @@ Route::group(['middleware' => ['web']], function () {
             });
 
 
+            // vendor Role Routes
+            Route::get('/roles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
+                'view' => 'vendoradmin::users.roles.index'
+            ])->name('vendoradmin.roles.index');
+
+            Route::get('/roles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
+                'view' => 'vendoradmin::users.roles.create'
+            ])->name('vendoradmin.roles.create');
+
+            Route::post('/roles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
+                'redirect' => 'vendoradmin.roles.index'
+            ])->name('vendoradmin.roles.store');
+
+            Route::get('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
+                'view' => 'vendoradmin::users.roles.edit'
+            ])->name('vendoradmin.roles.edit');
+
+            Route::put('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
+                'redirect' => 'vendoradmin.roles.index'
+            ])->name('vendoradmin.roles.update');
+
+            Route::post('/roles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('vendoradmin.roles.delete');
+
             // Locale Routes
             Route::get('/locales', 'Webkul\Core\Http\Controllers\LocaleController@index')->defaults('_config', [
                 'view' => 'vendoradmin::settings.locales.index'

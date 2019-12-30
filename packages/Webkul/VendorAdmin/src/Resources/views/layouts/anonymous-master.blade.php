@@ -9,7 +9,7 @@
 
         <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/favicon.ico') }}" />
 
-        <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/webkul/vendoradmin/assets/css/admin.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
 
         <style>
@@ -125,7 +125,7 @@
             @endif
         </script>
 
-        <script type="text/javascript" src="{{ asset('vendor/webkul/admin/assets/js/admin.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/webkul/vendoradmin/assets/js/admin.js') }}"></script>
         <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
 
         @stack('javascript')
