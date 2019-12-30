@@ -4,9 +4,12 @@ namespace Webkul\Vendor\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
 use Webkul\Vendor\Repositories\VendorSourceRepository;
+use Webkul\Vendor\Repositories\VendorRoleRepository;
+use Webkul\Vendor\Http\Requests\VendorForm;
+use Hash;
 
 /**
- * Vendor source controller
+ * Admin user controller
  *
  * @author    Jitendra Singh <jitendra@webkul.com>
  * @copyright 2018 Webkul Software Pvt Ltd (http://www.webkul.com)
@@ -21,29 +24,44 @@ class VendorSourceController extends Controller
     protected $_config;
 
     /**
-     * VendorSourceRepository object
+     * vendorSourceRepository object
      *
-     * @var array
+     * @var Object
      */
     protected $vendorSourceRepository;
 
     /**
+     * RoleRepository object
+     *
+     * @var Object
+     */
+    protected $vendorRoleRepository;
+
+    /**
      * Create a new controller instance.
      *
-     * @param  \Webkul\Vendor\Repositories\VendorSourceRepository  $vendorSourceRepository
+     * @param  \Webkul\User\Repositories\vendorSourceRepository $vendorSourceRepository
+     * @param  \Webkul\User\Repositories\RoleRepository $roleRepository
      * @return void
      */
-    public function __construct(VendorSourceRepository $vendorSourceRepository)
+    public function __construct(
+        VendorSourceRepository $vendorSourceRepository,
+        VendorRoleRepository $vendorRoleRepository
+    )
     {
         $this->vendorSourceRepository = $vendorSourceRepository;
 
+        $this->vendorRoleRepository = $vendorRoleRepository;
+
         $this->_config = request('_config');
+
+        $this->middleware('guest', ['except' => 'destroy']);
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\View 
      */
     public function index()
     {
@@ -53,36 +71,35 @@ class VendorSourceController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\View 
      */
     public function create()
     {
-        return view($this->_config['view']);
+        $roles = $this->vendorRoleRepository->all();
+
+        return view($this->_config['view'], compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Webkul\Vendor\Http\Requests\VendorForm  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(VendorForm $request)
     {
-        $this->validate(request(), [
-            'id'           => ['required'],
-            'name'           => 'required',
-            'name_kana'   => 'required',
-            'account_transfer_company_code'  => 'required'
-        ]);
+        $data = $request->all();
 
-        $data = request()->all();
+        if (isset($data['password']) && $data['password'])
+            $data['password'] = bcrypt($data['password']);
 
         Event::fire('vendor.vendor_source.create.before');
 
         $vendorSource = $this->vendorSourceRepository->create($data);
 
         Event::fire('vendor.vendor_source.create.after', $vendorSource);
-
-        session()->flash('success', trans('admin::app.settings.vendor_sources.create-success'));
+    
+        session()->flash('success', trans('admin::app.response.create-success', ['name' => 'User']));
 
         return redirect()->route($this->_config['redirect']);
     }
@@ -90,32 +107,39 @@ class VendorSourceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\View\View
+     * @param integer $id
+     * @return \Illuminate\View\View 
      */
     public function edit($id)
     {
-        $vendorSource = $this->vendorSourceRepository->findOrFail($id);
+        $user = $this->vendorSourceRepository->findOrFail($id);
 
-        return view($this->_config['view'], compact('vendorSource'));
+        $roles = $this->vendorRoleRepository->all();
+
+        return view($this->_config['view'], compact('user', 'roles'));
     }
 
     /**
      * Update the specified resource in storage.
      *
+     * @param  \Webkul\Vendor\Http\Requests\VendorForm  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update(VendorForm $request, $id)
     {
-        $this->validate(request(), [
-            'id'           => ['required'],
-            'name'           => 'required',
-            'name_kana'   => 'required',
-            'account_transfer_company_code'  => 'required'
-        ]);
+        $data = $request->all();
 
-        $data = request()->all();
+        if (! $data['password'])
+            unset($data['password']);
+        else
+            $data['password'] = bcrypt($data['password']);
+
+        if (isset($data['status'])) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
 
         Event::fire('vendor.vendor_source.update.before', $id);
 
@@ -123,7 +147,7 @@ class VendorSourceController extends Controller
 
         Event::fire('vendor.vendor_source.update.after', $vendorSource);
 
-        session()->flash('success', trans('admin::app.settings.vendor_sources.update-success'));
+        session()->flash('success', trans('admin::app.response.update-success', ['name' => 'User']));
 
         return redirect()->route($this->_config['redirect']);
     }
@@ -132,30 +156,31 @@ class VendorSourceController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\View\View 
      */
     public function destroy($id)
     {
-        $vendorSource = $this->vendorSourceRepository->findOrFail($id);
+        $user = $this->vendorSourceRepository->findOrFail($id);
 
         if ($this->vendorSourceRepository->count() == 1) {
-            session()->flash('error', trans('admin::app.settings.vendor_sources.last-delete-error'));
+            session()->flash('error', trans('admin::app.settings.vendor_sources.last-delete-error', ['name' => 'Vendor']));
         } else {
-            try {
-                Event::fire('vendor.vendor_source.delete.before', $id);
+            Event::fire('vendor.vendor_source.delete.before', $id);
 
+            try {
                 $this->vendorSourceRepository->delete($id);
+
+                session()->flash('success', trans('admin::app.response.delete-success', ['name' => 'Vendor']));
 
                 Event::fire('vendor.vendor_source.delete.after', $id);
 
-                session()->flash('success', trans('admin::app.settings.vendor_sources.delete-success'));
-
                 return response()->json(['message' => true], 200);
-            } catch (\Exception $e) {
-                session()->flash('error', trans('admin::app.response.delete-failed', ['name' => 'Vendor source']));
+            } catch (Exception $e) {
+                session()->flash('error', trans('admin::app.response.delete-failed', ['name' => 'Vendor']));
             }
         }
 
         return response()->json(['message' => false], 400);
     }
+
 }
