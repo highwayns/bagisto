@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
         // Admin Routes
-        Route::group(['middleware' => ['vendoradmin']], function () {
+        Route::group(['middleware' => ['admin']], function () {
             Route::get('/logout', 'Webkul\Vendor\Http\Controllers\SessionController@destroy')->defaults('_config', [
                 'redirect' => 'vendoradmin.session.create'
             ])->name('vendoradmin.session.destroy');
@@ -379,29 +379,62 @@ Route::group(['middleware' => ['web']], function () {
                 Route::post('/families/delete/{id}', 'Webkul\Attribute\Http\Controllers\AttributeFamilyController@destroy')->name('vendoradmin.catalog.families.delete');
             });
 
+            // User Routes
+            //datagrid for backend users
+            Route::get('/users', 'Webkul\Vendor\Http\Controllers\UserController@index')->defaults('_config', [
+                'view' => 'vendoradmin::users.users.index'
+            ])->name('vendoradmin.users.index');
 
-            // vendor Role Routes
-            Route::get('/roles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
+            //create backend user get
+            Route::get('/users/create', 'Webkul\Vendor\Http\Controllers\UserController@create')->defaults('_config', [
+                'view' => 'vendoradmin::users.users.create'
+            ])->name('vendoradmin.users.create');
+
+            //create backend user post
+            Route::post('/users/create', 'Webkul\Vendor\Http\Controllers\UserController@store')->defaults('_config', [
+                'redirect' => 'vendoradmin.users.index'
+            ])->name('vendoradmin.users.store');
+
+            //delete backend user view
+            Route::get('/users/edit/{id}', 'Webkul\Vendor\Http\Controllers\UserController@edit')->defaults('_config', [
+                'view' => 'vendoradmin::users.users.edit'
+            ])->name('vendoradmin.users.edit');
+
+            //edit backend user submit
+            Route::put('/users/edit/{id}', 'Webkul\Vendor\Http\Controllers\UserController@update')->defaults('_config', [
+                'redirect' => 'vendoradmin.users.index'
+            ])->name('vendoradmin.users.update');
+
+            //delete backend user
+            Route::post('/users/delete/{id}', 'Webkul\Vendor\Http\Controllers\UserController@destroy')->name('vendoradmin.users.delete');
+
+            Route::post('/confirm/destroy', 'Webkul\Vendor\Http\Controllers\UserController@destroySelf')->defaults('_config', [
+                'redirect' => 'vendoradmin.users.index'
+            ])->name('vendoradmin.users.confirm.destroy');
+
+            // User Role Routes
+            Route::get('/roles', 'Webkul\Vendor\Http\Controllers\RoleController@index')->defaults('_config', [
                 'view' => 'vendoradmin::users.roles.index'
             ])->name('vendoradmin.roles.index');
 
-            Route::get('/roles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
+            Route::get('/roles/create', 'Webkul\Vendor\Http\Controllers\RoleController@create')->defaults('_config', [
                 'view' => 'vendoradmin::users.roles.create'
             ])->name('vendoradmin.roles.create');
 
-            Route::post('/roles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
+            Route::post('/roles/create', 'Webkul\Vendor\Http\Controllers\RoleController@store')->defaults('_config', [
                 'redirect' => 'vendoradmin.roles.index'
             ])->name('vendoradmin.roles.store');
 
-            Route::get('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
+            Route::get('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\RoleController@edit')->defaults('_config', [
                 'view' => 'vendoradmin::users.roles.edit'
             ])->name('vendoradmin.roles.edit');
 
-            Route::put('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
+            Route::put('/roles/edit/{id}', 'Webkul\Vendor\Http\Controllers\RoleController@update')->defaults('_config', [
                 'redirect' => 'vendoradmin.roles.index'
             ])->name('vendoradmin.roles.update');
 
-            Route::post('/roles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('vendoradmin.roles.delete');
+            Route::post('/roles/delete/{id}', 'Webkul\Vendor\Http\Controllers\RoleController@destroy')->name('vendoradmin.roles.delete');
+
 
             // Locale Routes
             Route::get('/locales', 'Webkul\Core\Http\Controllers\LocaleController@index')->defaults('_config', [
@@ -502,6 +535,56 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::post('/inventory_sources/delete/{id}', 'Webkul\Inventory\Http\Controllers\InventorySourceController@destroy')->name('vendoradmin.inventory_sources.delete');
 
+            // Vendor Source Routes
+            Route::get('/vendor_sources', 'Webkul\Vendor\Http\Controllers\VendorSourceController@index')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_sources.index'
+            ])->name('vendoradmin.vendor_sources.index');
+
+            Route::get('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@create')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_sources.create'
+            ])->name('vendoradmin.vendor_sources.create');
+
+            Route::post('/vendor_sources/create', 'Webkul\Vendor\Http\Controllers\VendorSourceController@store')->defaults('_config', [
+                'redirect' => 'vendoradmin.vendor_sources.index'
+            ])->name('vendoradmin.vendor_sources.store');
+
+            Route::get('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@edit')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_sources.edit'
+            ])->name('vendoradmin.vendor_sources.edit');
+
+            Route::put('/vendor_sources/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@update')->defaults('_config', [
+                'redirect' => 'vendoradmin.vendor_sources.index'
+            ])->name('vendoradmin.vendor_sources.update');
+
+            Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('vendoradmin.vendor_sources.delete');
+
+            Route::post('/vendorconfirm/destroy', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'vendoradmin.vendor_sources.index'
+            ])->name('vendoradmin.vendors.confirm.destroy');
+
+            // Vendor Role Routes
+            Route::get('/vendorroles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_roles.index'
+            ])->name('vendoradmin.vendorroles.index');
+
+            Route::get('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_roles.create'
+            ])->name('vendoradmin.vendorroles.create');
+
+            Route::post('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
+                'redirect' => 'vendoradmin.vendorroles.index'
+            ])->name('vendoradmin.vendorroles.store');
+
+            Route::get('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
+                'view' => 'vendoradmin::settings.vendor_roles.edit'
+            ])->name('vendoradmin.vendorroles.edit');
+
+            Route::put('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
+                'redirect' => 'vendoradmin.vendorroles.index'
+            ])->name('vendoradmin.vendorroles.update');
+
+            Route::post('/vendorroles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('vendoradmin.vendorroles.delete');
+
             // Agent Source Routes
             Route::get('/agent_sources', 'Webkul\Agent\Http\Controllers\AgentSourceController@index')->defaults('_config', [
                 'view' => 'vendoradmin::settings.agent_sources.index'
@@ -524,6 +607,33 @@ Route::group(['middleware' => ['web']], function () {
             ])->name('vendoradmin.agent_sources.update');
 
             Route::post('/agent_sources/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroy')->name('vendoradmin.agent_sources.delete');
+
+            Route::post('/agentconfirm/destroy', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'vendoradmin.agent_sources.index'
+            ])->name('vendoradmin.agents.confirm.destroy');
+
+            // Agent Role Routes
+            Route::get('/agentroles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
+                'view' => 'vendoradmin::settings.agent_roles.index'
+            ])->name('vendoradmin.agentroles.index');
+
+            Route::get('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
+                'view' => 'vendoradmin::settings.agent_roles.create'
+            ])->name('vendoradmin.agentroles.create');
+
+            Route::post('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
+                'redirect' => 'vendoradmin.agentroles.index'
+            ])->name('vendoradmin.agentroles.store');
+
+            Route::get('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
+                'view' => 'vendoradmin::settings.agent_roles.edit'
+            ])->name('vendoradmin.agentroles.edit');
+
+            Route::put('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
+                'redirect' => 'vendoradmin.agentroles.index'
+            ])->name('vendoradmin.agentroles.update');
+
+            Route::post('/agentroles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('vendoradmin.agentroles.delete');
 
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [
@@ -716,37 +826,37 @@ Route::group(['middleware' => ['web']], function () {
             });
 
             Route::prefix('cms')->group(function () {
-                Route::get('/', 'Webkul\CMS\Http\Controllers\Admin\PageController@index')->defaults('_config', [
+                Route::get('/', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@index')->defaults('_config', [
                     'view' => 'vendoradmin::cms.index'
                 ])->name('vendoradmin.cms.index');
 
-                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\Admin\PageController@preview')->name('vendoradmin.cms.preview');
+                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@preview')->name('vendoradmin.cms.preview');
 
-                Route::get('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@create')->defaults('_config', [
+                Route::get('create', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@create')->defaults('_config', [
                     'view' => 'vendoradmin::cms.create'
                 ])->name('vendoradmin.cms.create');
 
-                Route::post('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@store')->defaults('_config', [
+                Route::post('create', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@store')->defaults('_config', [
                     'redirect' => 'vendoradmin.cms.index'
                 ])->name('vendoradmin.cms.store');
 
-                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@edit')->defaults('_config', [
+                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@edit')->defaults('_config', [
                     'view' => 'vendoradmin::cms.edit'
                 ])->name('vendoradmin.cms.edit');
 
-                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@update')->defaults('_config', [
+                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@update')->defaults('_config', [
                     'redirect' => 'vendoradmin.cms.index'
                 ])->name('vendoradmin.cms.update');
 
-                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
+                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@delete')->defaults('_config', [
                     'redirect' => 'vendoradmin.cms.index'
                 ])->name('vendoradmin.cms.delete');
 
-                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\Admin\PageController@massDelete')->defaults('_config', [
+                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@massDelete')->defaults('_config', [
                     'redirect' => 'vendoradmin.cms.index'
                 ])->name('vendoradmin.cms.mass-delete');
 
-                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
+                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\VendorAdmin\PageController@delete')->defaults('_config', [
                 //     'redirect' => 'vendoradmin.cms.index'
                 // ])->name('vendoradmin.cms.delete');
             });

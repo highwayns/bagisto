@@ -379,29 +379,62 @@ Route::group(['middleware' => ['web']], function () {
                 Route::post('/families/delete/{id}', 'Webkul\Attribute\Http\Controllers\AttributeFamilyController@destroy')->name('agentadmin.catalog.families.delete');
             });
 
+            // User Routes
+            //datagrid for backend users
+            Route::get('/users', 'Webkul\Agent\Http\Controllers\UserController@index')->defaults('_config', [
+                'view' => 'agentadmin::users.users.index'
+            ])->name('agentadmin.users.index');
 
-            // agent Role Routes
-            Route::get('/roles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
+            //create backend user get
+            Route::get('/users/create', 'Webkul\Agent\Http\Controllers\UserController@create')->defaults('_config', [
+                'view' => 'agentadmin::users.users.create'
+            ])->name('agentadmin.users.create');
+
+            //create backend user post
+            Route::post('/users/create', 'Webkul\Agent\Http\Controllers\UserController@store')->defaults('_config', [
+                'redirect' => 'agentadmin.users.index'
+            ])->name('agentadmin.users.store');
+
+            //delete backend user view
+            Route::get('/users/edit/{id}', 'Webkul\Agent\Http\Controllers\UserController@edit')->defaults('_config', [
+                'view' => 'agentadmin::users.users.edit'
+            ])->name('agentadmin.users.edit');
+
+            //edit backend user submit
+            Route::put('/users/edit/{id}', 'Webkul\Agent\Http\Controllers\UserController@update')->defaults('_config', [
+                'redirect' => 'agentadmin.users.index'
+            ])->name('agentadmin.users.update');
+
+            //delete backend user
+            Route::post('/users/delete/{id}', 'Webkul\Agent\Http\Controllers\UserController@destroy')->name('agentadmin.users.delete');
+
+            Route::post('/confirm/destroy', 'Webkul\Agent\Http\Controllers\UserController@destroySelf')->defaults('_config', [
+                'redirect' => 'agentadmin.users.index'
+            ])->name('agentadmin.users.confirm.destroy');
+
+            // User Role Routes
+            Route::get('/roles', 'Webkul\Agent\Http\Controllers\RoleController@index')->defaults('_config', [
                 'view' => 'agentadmin::users.roles.index'
             ])->name('agentadmin.roles.index');
 
-            Route::get('/roles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
+            Route::get('/roles/create', 'Webkul\Agent\Http\Controllers\RoleController@create')->defaults('_config', [
                 'view' => 'agentadmin::users.roles.create'
             ])->name('agentadmin.roles.create');
 
-            Route::post('/roles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
+            Route::post('/roles/create', 'Webkul\Agent\Http\Controllers\RoleController@store')->defaults('_config', [
                 'redirect' => 'agentadmin.roles.index'
             ])->name('agentadmin.roles.store');
 
-            Route::get('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
+            Route::get('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\RoleController@edit')->defaults('_config', [
                 'view' => 'agentadmin::users.roles.edit'
             ])->name('agentadmin.roles.edit');
 
-            Route::put('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
+            Route::put('/roles/edit/{id}', 'Webkul\Agent\Http\Controllers\RoleController@update')->defaults('_config', [
                 'redirect' => 'agentadmin.roles.index'
             ])->name('agentadmin.roles.update');
 
-            Route::post('/roles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('agentadmin.roles.delete');
+            Route::post('/roles/delete/{id}', 'Webkul\Agent\Http\Controllers\RoleController@destroy')->name('agentadmin.roles.delete');
+
 
             // Locale Routes
             Route::get('/locales', 'Webkul\Core\Http\Controllers\LocaleController@index')->defaults('_config', [
@@ -524,6 +557,83 @@ Route::group(['middleware' => ['web']], function () {
             ])->name('agentadmin.vendor_sources.update');
 
             Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('agentadmin.vendor_sources.delete');
+
+            Route::post('/vendorconfirm/destroy', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'agentadmin.vendor_sources.index'
+            ])->name('agentadmin.vendors.confirm.destroy');
+
+            // Vendor Role Routes
+            Route::get('/vendorroles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
+                'view' => 'agentadmin::settings.vendor_roles.index'
+            ])->name('agentadmin.vendorroles.index');
+
+            Route::get('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
+                'view' => 'agentadmin::settings.vendor_roles.create'
+            ])->name('agentadmin.vendorroles.create');
+
+            Route::post('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
+                'redirect' => 'agentadmin.vendorroles.index'
+            ])->name('agentadmin.vendorroles.store');
+
+            Route::get('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
+                'view' => 'agentadmin::settings.vendor_roles.edit'
+            ])->name('agentadmin.vendorroles.edit');
+
+            Route::put('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
+                'redirect' => 'agentadmin.vendorroles.index'
+            ])->name('agentadmin.vendorroles.update');
+
+            Route::post('/vendorroles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('agentadmin.vendorroles.delete');
+
+            // Agent Source Routes
+            Route::get('/agent_sources', 'Webkul\Agent\Http\Controllers\AgentSourceController@index')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_sources.index'
+            ])->name('agentadmin.agent_sources.index');
+
+            Route::get('/agent_sources/create', 'Webkul\Agent\Http\Controllers\AgentSourceController@create')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_sources.create'
+            ])->name('agentadmin.agent_sources.create');
+
+            Route::post('/agent_sources/create', 'Webkul\Agent\Http\Controllers\AgentSourceController@store')->defaults('_config', [
+                'redirect' => 'agentadmin.agent_sources.index'
+            ])->name('agentadmin.agent_sources.store');
+
+            Route::get('/agent_sources/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@edit')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_sources.edit'
+            ])->name('agentadmin.agent_sources.edit');
+
+            Route::put('/agent_sources/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@update')->defaults('_config', [
+                'redirect' => 'agentadmin.agent_sources.index'
+            ])->name('agentadmin.agent_sources.update');
+
+            Route::post('/agent_sources/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroy')->name('agentadmin.agent_sources.delete');
+
+            Route::post('/agentconfirm/destroy', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'agentadmin.agent_sources.index'
+            ])->name('agentadmin.agents.confirm.destroy');
+
+            // Agent Role Routes
+            Route::get('/agentroles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_roles.index'
+            ])->name('agentadmin.agentroles.index');
+
+            Route::get('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_roles.create'
+            ])->name('agentadmin.agentroles.create');
+
+            Route::post('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
+                'redirect' => 'agentadmin.agentroles.index'
+            ])->name('agentadmin.agentroles.store');
+
+            Route::get('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
+                'view' => 'agentadmin::settings.agent_roles.edit'
+            ])->name('agentadmin.agentroles.edit');
+
+            Route::put('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
+                'redirect' => 'agentadmin.agentroles.index'
+            ])->name('agentadmin.agentroles.update');
+
+            Route::post('/agentroles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('agentadmin.agentroles.delete');
 
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [
@@ -716,37 +826,37 @@ Route::group(['middleware' => ['web']], function () {
             });
 
             Route::prefix('cms')->group(function () {
-                Route::get('/', 'Webkul\CMS\Http\Controllers\Admin\PageController@index')->defaults('_config', [
+                Route::get('/', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@index')->defaults('_config', [
                     'view' => 'agentadmin::cms.index'
                 ])->name('agentadmin.cms.index');
 
-                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\Admin\PageController@preview')->name('agentadmin.cms.preview');
+                Route::get('preview/{url_key}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@preview')->name('agentadmin.cms.preview');
 
-                Route::get('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@create')->defaults('_config', [
+                Route::get('create', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@create')->defaults('_config', [
                     'view' => 'agentadmin::cms.create'
                 ])->name('agentadmin.cms.create');
 
-                Route::post('create', 'Webkul\CMS\Http\Controllers\Admin\PageController@store')->defaults('_config', [
+                Route::post('create', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@store')->defaults('_config', [
                     'redirect' => 'agentadmin.cms.index'
                 ])->name('agentadmin.cms.store');
 
-                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@edit')->defaults('_config', [
+                Route::get('update/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@edit')->defaults('_config', [
                     'view' => 'agentadmin::cms.edit'
                 ])->name('agentadmin.cms.edit');
 
-                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@update')->defaults('_config', [
+                Route::post('update/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@update')->defaults('_config', [
                     'redirect' => 'agentadmin.cms.index'
                 ])->name('agentadmin.cms.update');
 
-                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
+                Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@delete')->defaults('_config', [
                     'redirect' => 'agentadmin.cms.index'
                 ])->name('agentadmin.cms.delete');
 
-                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\Admin\PageController@massDelete')->defaults('_config', [
+                Route::post('/massdelete', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@massDelete')->defaults('_config', [
                     'redirect' => 'agentadmin.cms.index'
                 ])->name('agentadmin.cms.mass-delete');
 
-                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\Admin\PageController@delete')->defaults('_config', [
+                // Route::post('/delete/{id}', 'Webkul\CMS\Http\Controllers\AgentAdmin\PageController@delete')->defaults('_config', [
                 //     'redirect' => 'agentadmin.cms.index'
                 // ])->name('agentadmin.cms.delete');
             });
