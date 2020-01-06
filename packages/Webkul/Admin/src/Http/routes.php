@@ -558,6 +558,33 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::post('/vendor_sources/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroy')->name('admin.vendor_sources.delete');
 
+            Route::post('/vendorconfirm/destroy', 'Webkul\Vendor\Http\Controllers\VendorSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.index'
+            ])->name('admin.vendors.confirm.destroy');
+
+            // Vendor Role Routes
+            Route::get('/vendorroles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
+                'view' => 'admin::vendor_sources.roles.index'
+            ])->name('admin.vendorroles.index');
+
+            Route::get('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
+                'view' => 'admin::vendor_sources.roles.create'
+            ])->name('admin.vendorroles.create');
+
+            Route::post('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.roles.index'
+            ])->name('admin.vendorroles.store');
+
+            Route::get('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
+                'view' => 'admin::vendor_sources.roles.edit'
+            ])->name('admin.vendorroles.edit');
+
+            Route::put('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
+                'redirect' => 'admin.vendor_sources.roles.index'
+            ])->name('admin.vendorroles.update');
+
+            Route::post('/vendorroles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('admin.vendorroles.delete');
+
             // Agent Source Routes
             Route::get('/agent_sources', 'Webkul\Agent\Http\Controllers\AgentSourceController@index')->defaults('_config', [
                 'view' => 'admin::settings.agent_sources.index'
@@ -580,6 +607,33 @@ Route::group(['middleware' => ['web']], function () {
             ])->name('admin.agent_sources.update');
 
             Route::post('/agent_sources/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroy')->name('admin.agent_sources.delete');
+
+            Route::post('/agentconfirm/destroy', 'Webkul\Agent\Http\Controllers\AgentSourceController@destroySelf')->defaults('_config', [
+                'redirect' => 'admin.agent_sources.index'
+            ])->name('admin.agents.confirm.destroy');
+
+            // Agent Role Routes
+            Route::get('/agentroles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
+                'view' => 'admin::agent_sources.roles.index'
+            ])->name('admin.agentroles.index');
+
+            Route::get('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
+                'view' => 'admin::agent_sources.roles.create'
+            ])->name('admin.agentroles.create');
+
+            Route::post('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
+                'redirect' => 'admin.agent_sources.roles.index'
+            ])->name('admin.agentroles.store');
+
+            Route::get('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
+                'view' => 'admin::agent_sources.roles.edit'
+            ])->name('admin.agentroles.edit');
+
+            Route::put('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
+                'redirect' => 'admin.agent_sources.roles.index'
+            ])->name('admin.agentroles.update');
+
+            Route::post('/agentroles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('admin.agentroles.delete');
 
             // Channel Routes
             Route::get('/channels', 'Webkul\Core\Http\Controllers\ChannelController@index')->defaults('_config', [

@@ -9,6 +9,18 @@ return [
             'assets_path' => 'public/themes/default/assets',
             'name' => 'Default'
         ],
+        'vendor' => [
+            'views_path' => 'resources/themes/vendor/views',
+            'assets_path' => 'public/themes/vendor/assets',
+            'name' => 'vendor',
+            'parent' => 'default'
+        ],
+        'agent' => [
+            'views_path' => 'resources/themes/agent/views',
+            'assets_path' => 'public/themes/agent/assets',
+            'name' => 'agent',
+            'parent' => 'default'
+        ]
 
         // 'bliss' => [
         //     'views_path' => 'resources/themes/bliss/views',
