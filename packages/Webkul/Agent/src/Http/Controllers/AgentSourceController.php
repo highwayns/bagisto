@@ -4,6 +4,7 @@ namespace Webkul\Agent\Http\Controllers;
 
 use Illuminate\Support\Facades\Event;
 use Webkul\Agent\Repositories\AgentSourceRepository;
+use Webkul\Vendor\Repositories\VendorSourceRepository;
 use Webkul\Agent\Repositories\AgentRoleRepository;
 use Webkul\Agent\Http\Requests\AgentForm;
 use Hash;
@@ -31,6 +32,13 @@ class AgentSourceController extends Controller
     protected $agentSourceRepository;
 
     /**
+     * vendorSourceRepository object
+     *
+     * @var Object
+     */
+    protected $vendorSourceRepository;
+
+    /**
      * RoleRepository object
      *
      * @var Object
@@ -46,12 +54,15 @@ class AgentSourceController extends Controller
      */
     public function __construct(
         AgentSourceRepository $agentSourceRepository,
-        AgentRoleRepository $agentRoleRepository
+        AgentRoleRepository $agentRoleRepository,
+        VendorSourceRepository $vendorSourceRepository
     )
     {
         $this->agentSourceRepository = $agentSourceRepository;
 
         $this->agentRoleRepository = $agentRoleRepository;
+
+        $this->vendorSourceRepository = $vendorSourceRepository;
 
         $this->_config = request('_config');
 
@@ -77,7 +88,9 @@ class AgentSourceController extends Controller
     {
         $roles = $this->agentRoleRepository->all();
 
-        return view($this->_config['view'], compact('roles'));
+        $vendors = $this->vendorSourceRepository->all();
+
+        return view($this->_config['view'], compact('roles', 'vendors'));
     }
 
     /**
@@ -116,7 +129,9 @@ class AgentSourceController extends Controller
 
         $roles = $this->agentRoleRepository->all();
 
-        return view($this->_config['view'], compact('user', 'roles'));
+        $vendors = $this->vendorSourceRepository->all();
+
+        return view($this->_config['view'], compact('user', 'roles', 'vendors'));
     }
 
     /**

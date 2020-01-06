@@ -81,6 +81,76 @@
                             </div>
                         </div>
                     </accordian>
+
+                    <accordian :title="'{{ __('admin::app.settings.agent_sources.vendor') }}'" :active="true">
+                        <div slot="body">
+                            <div class="control-group" :class="[errors.has('vendor_id') ? 'has-error' : '']">
+                                <label for="vendor" class="required">{{ __('admin::app.settings.agent_sources.vendor') }}</label>
+                                <select v-validate="'required'" class="control" name="vendor_id" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.vendor') }}&quot;">
+                                    @foreach ($vendors as $vendor)
+                                        <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
+                                    @endforeach
+                                </select>
+                                <span class="control-error" v-if="errors.has('vendor_id')">@{{ errors.first('vendor_id') }}</span>
+                            </div>
+                        </div>
+                    </accordian>
+
+                    <accordian :title="'{{ __('admin::app.settings.agent_sources.address') }}'" :active="true">
+                        <div slot="body">
+                            <div class="control-group" :class="[errors.has('city') ? 'has-error' : '']">
+                                <label for="city" class="required">{{ __('admin::app.settings.agent_sources.city') }}</label>
+                                <input v-validate="'required'" class="control" id="city" name="city" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.city') }}&quot;" value="{{ old('city') }}"/>
+                                <span class="control-error" v-if="errors.has('city')">@{{ errors.first('city') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('pref') ? 'has-error' : '']">
+                                <label for="pref" class="required">{{ __('admin::app.settings.agent_sources.pref') }}</label>
+                                <input v-validate="'required'" class="control" id="pref" name="pref" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.pref') }}&quot;" value="{{ old('pref') }}"/>
+                                <span class="control-error" v-if="errors.has('pref')">@{{ errors.first('pref') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('address') ? 'has-error' : '']">
+                                <label for="address" class="required">{{ __('admin::app.settings.agent_sources.address') }}</label>
+                                <input v-validate="'required'" class="control" id="address" name="address" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.address') }}&quot;" value="{{ old('address') }}"/>
+                                <span class="control-error" v-if="errors.has('address')">@{{ errors.first('address') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('postcode') ? 'has-error' : '']">
+                                <label for="postcode" class="required">{{ __('admin::app.settings.agent_sources.postcode') }}</label>
+                                <input v-validate="'required'" class="control" id="postcode" name="postcode" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.postcode') }}&quot;" value="{{ old('postcode') }}"/>
+                                <span class="control-error" v-if="errors.has('postcode')">@{{ errors.first('postcode') }}</span>
+                            </div>
+                        </div>
+                    </accordian>
+
+                    <accordian :title="'{{ __('admin::app.settings.agent_sources.agency_denki_shop_code') }}'" :active="true">
+                        <div slot="body">
+                            <div class="control-group" :class="[errors.has('building_name') ? 'has-error' : '']">
+                                <label for="building_name" class="required">{{ __('admin::app.settings.agent_sources.building_name') }}</label>
+                                <input v-validate="'required'" class="control" id="building_name" name="building_name" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.building_name') }}&quot;" value="{{ old('building_name') }}"/>
+                                <span class="control-error" v-if="errors.has('building_name')">@{{ errors.first('building_name') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('tel') ? 'has-error' : '']">
+                                <label for="tel" class="required">{{ __('admin::app.settings.agent_sources.tel') }}</label>
+                                <input v-validate="'required'" class="control" id="tel" name="tel" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.tel') }}&quot;" value="{{ old('tel') }}"/>
+                                <span class="control-error" v-if="errors.has('tel')">@{{ errors.first('tel') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('fax') ? 'has-error' : '']">
+                                <label for="fax" class="required">{{ __('admin::app.settings.agent_sources.fax') }}</label>
+                                <input v-validate="'required'" class="control" id="fax" name="fax" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.fax') }}&quot;" value="{{ old('fax') }}"/>
+                                <span class="control-error" v-if="errors.has('fax')">@{{ errors.first('fax') }}</span>
+                            </div>
+
+                            <div class="control-group" :class="[errors.has('agency_denki_shop_code') ? 'has-error' : '']">
+                                <label for="agency_denki_shop_code" class="required">{{ __('admin::app.settings.agent_sources.agency_denki_shop_code') }}</label>
+                                <input v-validate="'required'" class="control" id="agency_denki_shop_code" name="agency_denki_shop_code" data-vv-as="&quot;{{ __('admin::app.settings.agent_sources.agency_denki_shop_code') }}&quot;" value="{{ old('agency_denki_shop_code') }}"/>
+                                <span class="control-error" v-if="errors.has('agency_denki_shop_code')">@{{ errors.first('agency_denki_shop_code') }}</span>
+                            </div>
+                        </div>
+                    </accordian>
                 </div>
             </div>
         </form>
