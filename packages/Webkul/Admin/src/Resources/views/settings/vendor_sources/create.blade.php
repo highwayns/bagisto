@@ -10,7 +10,7 @@
             <div class="page-header">
                 <div class="page-title">
                     <h1>
-                        <i class="icon angle-left-icon back-link" onclick="history.length > 1 ? history.go(-1) : window.location = '{{ url('/vendoradmin/dashboard') }}';"></i>
+                        <i class="icon angle-left-icon back-link" onclick="history.length > 1 ? history.go(-1) : window.location = '{{ url('/admin/dashboard') }}';"></i>
 
                         {{ __('admin::app.settings.vendor_sources.title') }}
                     </h1>
@@ -43,7 +43,7 @@
                         </div>
                     </accordian>
 
-                    <accordian :title="'{{ __('Password') }}'" :active="true">
+                    <accordian :title="'{{ __('admin::app.settings.vendor_sources.password') }}'" :active="true">
                         <div slot="body">
                             <div class="control-group" :class="[errors.has('password') ? 'has-error' : '']">
                                 <label for="password">{{ __('admin::app.settings.vendor_sources.password') }}</label>

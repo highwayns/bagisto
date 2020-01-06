@@ -43,7 +43,7 @@
                         </div>
                     </accordian>
 
-                    <accordian :title="'{{ __('Password') }}'" :active="true">
+                    <accordian :title="'{{ __('admin::app.users.users.password') }}'" :active="true">
                         <div slot="body">
                             <div class="control-group" :class="[errors.has('password') ? 'has-error' : '']">
                                 <label for="password">{{ __('admin::app.users.users.password') }}</label>

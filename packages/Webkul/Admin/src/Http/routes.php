@@ -564,23 +564,23 @@ Route::group(['middleware' => ['web']], function () {
 
             // Vendor Role Routes
             Route::get('/vendorroles', 'Webkul\Vendor\Http\Controllers\VendorRoleController@index')->defaults('_config', [
-                'view' => 'admin::vendor_sources.roles.index'
+                'view' => 'admin::settings.vendor_roles.index'
             ])->name('admin.vendorroles.index');
 
             Route::get('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@create')->defaults('_config', [
-                'view' => 'admin::vendor_sources.roles.create'
+                'view' => 'admin::settings.vendor_roles.create'
             ])->name('admin.vendorroles.create');
 
             Route::post('/vendorroles/create', 'Webkul\Vendor\Http\Controllers\VendorRoleController@store')->defaults('_config', [
-                'redirect' => 'admin.vendor_sources.roles.index'
+                'redirect' => 'admin.vendorroles.index'
             ])->name('admin.vendorroles.store');
 
             Route::get('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@edit')->defaults('_config', [
-                'view' => 'admin::vendor_sources.roles.edit'
+                'view' => 'admin::settings.vendor_roles.edit'
             ])->name('admin.vendorroles.edit');
 
             Route::put('/vendorroles/edit/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@update')->defaults('_config', [
-                'redirect' => 'admin.vendor_sources.roles.index'
+                'redirect' => 'admin.vendorroles.index'
             ])->name('admin.vendorroles.update');
 
             Route::post('/vendorroles/delete/{id}', 'Webkul\Vendor\Http\Controllers\VendorRoleController@destroy')->name('admin.vendorroles.delete');
@@ -614,23 +614,23 @@ Route::group(['middleware' => ['web']], function () {
 
             // Agent Role Routes
             Route::get('/agentroles', 'Webkul\Agent\Http\Controllers\AgentRoleController@index')->defaults('_config', [
-                'view' => 'admin::agent_sources.roles.index'
+                'view' => 'admin::settings.agent_roles.index'
             ])->name('admin.agentroles.index');
 
             Route::get('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@create')->defaults('_config', [
-                'view' => 'admin::agent_sources.roles.create'
+                'view' => 'admin::settings.agent_roles.create'
             ])->name('admin.agentroles.create');
 
             Route::post('/agentroles/create', 'Webkul\Agent\Http\Controllers\AgentRoleController@store')->defaults('_config', [
-                'redirect' => 'admin.agent_sources.roles.index'
+                'redirect' => 'admin.agentroles.index'
             ])->name('admin.agentroles.store');
 
             Route::get('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@edit')->defaults('_config', [
-                'view' => 'admin::agent_sources.roles.edit'
+                'view' => 'admin::settings.agent_roles.edit'
             ])->name('admin.agentroles.edit');
 
             Route::put('/agentroles/edit/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@update')->defaults('_config', [
-                'redirect' => 'admin.agent_sources.roles.index'
+                'redirect' => 'admin.agentroles.index'
             ])->name('admin.agentroles.update');
 
             Route::post('/agentroles/delete/{id}', 'Webkul\Agent\Http\Controllers\AgentRoleController@destroy')->name('admin.agentroles.delete');

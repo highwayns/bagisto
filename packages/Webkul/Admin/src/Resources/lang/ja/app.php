@@ -69,6 +69,8 @@ return [
         'channels' => 'チャンネル一覧',
         'users' => 'ユーザー一覧',
         'roles' => 'ロール一覧',
+        'vendorroles' => 'ロール一覧',
+        'agentroles' => 'ロール一覧',        
         'sliders' => 'スライド一覧',
         'taxes' => '税金一覧',
         'tax-categories' => '税金カテゴリ一覧',

@@ -422,6 +422,12 @@ return [
         'route' => 'admin.vendor_sources.index',
         'sort' => 9
     ], [
+        'key' => 'settings.vendor_sources.vendor_sources',
+        'name' => 'admin::app.layouts.vendor-sources',
+        'route' => 'admin.vendor_sources.index',
+        'sort' => 1,
+        'icon-class' => ''
+    ], [
         'key' => 'settings.vendor_sources.create',
         'name' => 'admin::app.acl.create',
         'route' => 'admin.vendor_sources.create',
@@ -461,6 +467,12 @@ return [
         'name' => 'admin::app.acl.agent-sources',
         'route' => 'admin.agent_sources.index',
         'sort' => 10
+    ], [
+        'key' => 'settings.agent_sources.agent_sources',
+        'name' => 'admin::app.layouts.agent-sources',
+        'route' => 'admin.agent_sources.index',
+        'sort' => 1,
+        'icon-class' => ''
     ], [
         'key' => 'settings.agent_sources.create',
         'name' => 'admin::app.acl.create',
