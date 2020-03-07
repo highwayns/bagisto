@@ -10,3 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+})->middleware(['auth.shop'])->name('home');
+Route::get('shopify', 'ShopifyController@index')->middleware(['auth.shop']);

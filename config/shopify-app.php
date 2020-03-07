@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'api_key' => env('SHOPIFY_API_KEY', 'b76e4a5134684b08c085a92c1415aa4e'),
+    'api_key' => env('SHOPIFY_API_KEY', 'bd6c60755af85fadbad4c185b31d2bc1'),
 
     /*
     |--------------------------------------------------------------------------
@@ -131,7 +131,7 @@ return [
     |
     */
 
-    'api_secret' => env('SHOPIFY_API_SECRET', 'ff814527ef55d96a16ed8160c2e8e043'),
+    'api_secret' => env('SHOPIFY_API_SECRET', '4d16630c17fb6c09d9990e217e0e94eb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -282,11 +282,11 @@ return [
     */
 
     'webhooks' => [
-        /*
             [
-                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'orders/create'),
-                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'https://some-app.com/webhook/orders-create')
+                'topic' => env('SHOPIFY_WEBHOOK_1_TOPIC', 'app/uninstalled'),
+                'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', 'http://localhost:8000/webhook/app-uninstalled')
             ],
+        /*
             ...
         */
     ],
